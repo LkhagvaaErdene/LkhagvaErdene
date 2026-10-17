@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch src/scss/main.scss src/css/main.css"
+    "generate:images": "node src/tools/generate-images-json.mjs"
   },
   "keywords": [],
   "author": "",
