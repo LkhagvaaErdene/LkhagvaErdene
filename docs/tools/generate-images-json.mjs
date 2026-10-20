@@ -37,9 +37,7 @@ function buildImageMap(files) {
   }
 
   for (const foodCode of Object.keys(imageMap)) {
-    imageMap[foodCode].sort((a, b) =>
-      a.localeCompare(b, undefined, { numeric: true }),
-    );
+    imageMap[foodCode].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   }
 
   return imageMap;
@@ -62,4 +60,3 @@ function main() {
   console.log(`Total image files: ${files.length}`);
 }
 main();
-

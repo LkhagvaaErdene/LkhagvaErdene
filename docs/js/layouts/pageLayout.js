@@ -1,3 +1,10 @@
+// <section class="section">
+//      <div class="container">
+//          <h1> title </h1>
+//          content
+//      </div>
+// </section>
+
 export function renderPageLayout({
   id = "",
   title = "",

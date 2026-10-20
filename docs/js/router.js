@@ -14,8 +14,8 @@ export function initRouter(routes) {
   }
 
   // Хуудас анх ачаалагдахад renderRoute() ажиллана
-  window.addEventListener("load", renderRoute); 
+  window.addEventListener("load", renderRoute);
 
-// URL-ийн # хэсэг өөрчлөгдөх бүрд renderRoute() дахин ажиллана
-  window.addEventListener("hashchange", renderRoute); 
+  // URL-ийн # хэсэг өөрчлөгдөх бүрд renderRoute() дахин ажиллана
+  window.addEventListener("hashchange", renderRoute);
 }

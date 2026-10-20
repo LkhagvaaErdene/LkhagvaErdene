@@ -1,16 +1,15 @@
 // pageLayout.js-д .app-title, .app-line ашигласан.
 .app-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  // text-align: center;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   font-weight: 800;
   max-width: 760px;
   margin-bottom: 0.5rem;
 }
 
 .app-line {
-  width: 96px;
+  width: 76px;
   height: 3px;
   border-radius: 999px;
   background: var(--orange);

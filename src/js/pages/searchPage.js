@@ -14,13 +14,15 @@ import { renderFoodGroupList } from "../components/searchFoodGroupListSidebar.js
 import { loadImages } from "../services/imageService.js";
 import { renderImageModal, bindImageModalEvents } from "../components/imageModal.js";
 
+import { t } from "../i18n/i18n.js";
+
 let imageModalBound = false;
 
 export async function renderSearchPage() {
   const app = document.getElementById("app");
 
   app.innerHTML = renderPageLayout({
-    content: renderNotification("Loading data..."),
+    content: renderNotification(t("notification.loadingData")),
   });
 
   try {
@@ -33,7 +35,7 @@ export async function renderSearchPage() {
       renderSidebarPageLayout({
         sidebarContent: `${renderSearchFoodName()} ${renderSearchSettings()} ${renderFoodGroupList(groupedFoods)}`,
         pageId: "search",
-        pageTitle: "Food Composition Database",
+        pageTitle: t("searchPage.title"),
         mainContent: `
       <div id="resultTbl">
         ${renderDefaultTables(nutritionData)}
@@ -51,7 +53,7 @@ export async function renderSearchPage() {
     }
   } catch (error) {
     app.innerHTML = renderPageLayout({
-      content: renderNotification("Failed to load nutrition data.", "danger"),
+      content: renderNotification(t("notification.failedToLoadNutritionData"), "danger"),
     });
     console.error("Failed to load nutrition data:", error);
   }
