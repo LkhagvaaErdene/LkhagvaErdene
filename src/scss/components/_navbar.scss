@@ -9,7 +9,8 @@
   }
 }
 
-.navbar-end a {
+.navbar-end > a.navbar-item,
+.navbar-end .navbar-link {
   color: $secondaryColor;
 }
 
@@ -17,11 +18,11 @@
   position: sticky;
   top: 0;
   z-index: 1000; /* дээр харагдахаар */
-  background-color: #f5f5f5; /* эсвэл өөр өнгө */
+  background-color: var(--navbar-bg);
 }
 
 .app-shadow {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .navbar-brand .image img {
@@ -48,4 +49,21 @@
   background-color: transparent;
   color: inherit;
   box-shadow: none;
+}
+
+// Загвар сонгогч (Light / Dark / Auto) — сонгосон сонголтын icon-г л харуулна
+.app-theme-icon {
+  display: none;
+}
+
+:root[data-theme-pref="light"] .app-theme-icon-light,
+:root[data-theme-pref="dark"] .app-theme-icon-dark,
+:root[data-theme-pref="auto"] .app-theme-icon-auto {
+  display: inline-flex;
+}
+
+// Dropdown доторх сонгогдсон сонголт
+.navbar-dropdown a.navbar-item.is-active {
+  color: $primaryColor;
+  font-weight: 700;
 }

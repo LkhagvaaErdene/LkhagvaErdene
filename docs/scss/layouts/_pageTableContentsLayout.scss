@@ -18,7 +18,7 @@
 
 // tableLayout.js-д .app-subtitle ашигласан.
 .app-subtitle {
-  color: #607089;
+  color: var(--subtitle-color);
   font-size: clamp(1rem, 2vw, 1.35rem);
   // text-align: center;
   font-weight: bold;

@@ -1,17 +1,71 @@
 @charset "UTF-8";
 :root {
-  --border: #ececf2;
   --sidebar-width: clamp(280px, 22vw, 340px);
-  --sidebar-bg: #ffffff;
-  --page-bg: #ffffff;
-  --text-main: #23262f;
-  --text-soft: #6b7280;
   --pink: #ff6f91;
   --green: #2bac73;
   --orange: #ff914d;
+  --border: #ececf2;
+  --sidebar-bg: #ffffff;
+  --page-bg: #ffffff;
+  --navbar-bg: #f5f5f5;
+  --text-main: #23262f;
+  --text-soft: #6b7280;
   --active-bg: #fff2e8;
   --hover-bg: #f7f7fa;
+  --icon-btn-bg: #f2f3f5;
+  --icon-btn-color: #64748b;
+  --subtitle-color: #607089;
   --overlay: rgba(15, 23, 42, 0.55);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --border: #2b2f38;
+    --sidebar-bg: #171a20;
+    --page-bg: #0f1115;
+    --navbar-bg: #12141a;
+    --text-main: #e6e8ee;
+    --text-soft: #9aa3b2;
+    --active-bg: #2b2118;
+    --hover-bg: #232832;
+    --icon-btn-bg: #2b2f38;
+    --icon-btn-color: #aab3c2;
+    --subtitle-color: #8fa3c0;
+    --overlay: rgba(0, 0, 0, 0.7);
+    --shadow-color: rgba(0, 0, 0, 0.6);
+  }
+}
+:root[data-theme=light] {
+  --border: #ececf2;
+  --sidebar-bg: #ffffff;
+  --page-bg: #ffffff;
+  --navbar-bg: #f5f5f5;
+  --text-main: #23262f;
+  --text-soft: #6b7280;
+  --active-bg: #fff2e8;
+  --hover-bg: #f7f7fa;
+  --icon-btn-bg: #f2f3f5;
+  --icon-btn-color: #64748b;
+  --subtitle-color: #607089;
+  --overlay: rgba(15, 23, 42, 0.55);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme=dark] {
+  --border: #2b2f38;
+  --sidebar-bg: #171a20;
+  --page-bg: #0f1115;
+  --navbar-bg: #12141a;
+  --text-main: #e6e8ee;
+  --text-soft: #9aa3b2;
+  --active-bg: #2b2118;
+  --hover-bg: #232832;
+  --icon-btn-bg: #2b2f38;
+  --icon-btn-color: #aab3c2;
+  --subtitle-color: #8fa3c0;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Bulma Utilities */
@@ -22655,7 +22709,8 @@ has-background-danger.is-hoverable:active {
   color: #ff914d;
 }
 
-.navbar-end a {
+.navbar-end > a.navbar-item,
+.navbar-end .navbar-link {
   color: #ff914d;
 }
 
@@ -22663,11 +22718,11 @@ has-background-danger.is-hoverable:active {
   position: sticky;
   top: 0;
   z-index: 1000; /* дээр харагдахаар */
-  background-color: #f5f5f5; /* эсвэл өөр өнгө */
+  background-color: var(--navbar-bg);
 }
 
 .app-shadow {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .navbar-brand .image img {
@@ -22694,6 +22749,21 @@ has-background-danger.is-hoverable:active {
   box-shadow: none;
 }
 
+.app-theme-icon {
+  display: none;
+}
+
+:root[data-theme-pref=light] .app-theme-icon-light,
+:root[data-theme-pref=dark] .app-theme-icon-dark,
+:root[data-theme-pref=auto] .app-theme-icon-auto {
+  display: inline-flex;
+}
+
+.navbar-dropdown a.navbar-item.is-active {
+  color: #2bac73;
+  font-weight: 700;
+}
+
 .app-mobile-sidebar {
   display: none;
   border-bottom: 1px solid var(--border);
@@ -22706,9 +22776,9 @@ has-background-danger.is-hoverable:active {
   height: 32px;
   border: 0;
   border-radius: 14px;
-  background: #f2f3f5;
+  background: var(--icon-btn-bg);
   font-size: 1rem;
-  color: #64748b;
+  color: var(--icon-btn-color);
   cursor: pointer;
 }
 
@@ -22784,16 +22854,16 @@ has-background-danger.is-hoverable:active {
 }
 
 .app-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   font-weight: 800;
   max-width: 760px;
   margin-bottom: 0.5rem;
 }
 
 .app-line {
-  width: 96px;
+  width: 76px;
   height: 3px;
   border-radius: 999px;
   background: var(--orange);
@@ -22801,12 +22871,51 @@ has-background-danger.is-hoverable:active {
 }
 
 .app-subtitle {
-  color: #607089;
+  color: var(--subtitle-color);
   font-size: clamp(1rem, 2vw, 1.35rem);
   font-weight: bold;
   line-height: 1.6;
   max-width: 760px;
   margin-bottom: 2.5rem;
+}
+
+.image-count-tag {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  border-radius: 999px;
+}
+.image-count-tag:hover {
+  background-color: rgb(14.3333333333%, 57.3333333333%, 38.3333333333%);
+}
+
+#imageModal .modal-card {
+  width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+#imageModal .modal-card-head {
+  padding: 1.2rem 1.5rem;
+}
+#imageModal .modal-card-body {
+  padding: 1.5rem;
+}
+#imageModal #slideshowImage {
+  max-height: 52vh;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.zoomable-image {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+  user-select: none;
+}
+
+#fullscreenBtn {
+  border: none;
 }
 
 /* =========================
@@ -22863,7 +22972,7 @@ has-background-danger.is-hoverable:active {
     min-width: unset;
     height: 100vh;
     z-index: 40;
-    background: #fff;
+    background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
     border-bottom: 0;
     padding: 1rem 1rem 2rem;
@@ -22883,9 +22992,8 @@ has-background-danger.is-hoverable:active {
     margin-bottom: 0.75rem;
   }
   .app-title {
-    font-size: 2rem;
+    font-size: 1.65rem;
     line-height: 1.15;
-    letter-spacing: -0.03em;
   }
   .app-subtitle {
     font-size: 1rem;
@@ -22901,7 +23009,7 @@ has-background-danger.is-hoverable:active {
 ========================= */
 @media screen and (max-width: 480px) {
   .app-title {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
   }
   .app-subtitle {
     font-size: 0.95rem;

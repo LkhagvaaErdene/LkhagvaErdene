@@ -58,3 +58,4 @@ export async function renderSearchPage() {
     console.error("Failed to load nutrition data:", error);
   }
 }
+

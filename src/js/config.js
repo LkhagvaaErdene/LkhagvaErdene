@@ -1,4 +1,4 @@
-export const DATA_MODE = "local"; // Дараа нь api болгож солино.
+export const DATA_MODE = "local"; 
 export const LOCAL_NUTRITIONS_URL = "./data/nutritionsEnMn.json";
 
 export const API_BASE_URL = "https://example.com/api";

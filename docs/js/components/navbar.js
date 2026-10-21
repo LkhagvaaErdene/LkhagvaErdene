@@ -1,4 +1,5 @@
 import { t, toggleLanguage } from "../i18n/i18n.js";
+import { getThemePreference, setThemePreference } from "../i18n/theme.js";
 
 export function renderNavbar() {
   return `
@@ -54,6 +55,28 @@ export function renderNavbar() {
             </div>
 
             <div class="navbar-end">
+              <div class="navbar-item has-dropdown is-hoverable" id="themeDropdown">
+                <a class="navbar-link" href="#" id="themeToggle" role="button" aria-haspopup="true" aria-label="${t("nav.theme")}">
+                  <span class="icon app-theme-icon app-theme-icon-light"><i class="fas fa-sun"></i></span>
+                  <span class="icon app-theme-icon app-theme-icon-dark"><i class="fas fa-moon"></i></span>
+                  <span class="icon app-theme-icon app-theme-icon-auto"><i class="fas fa-circle-half-stroke"></i></span>
+                  <span>${t("nav.theme")}</span>
+                </a>
+                <div class="navbar-dropdown is-right">
+                  <a class="navbar-item" href="#" data-theme-option="light">
+                    <span class="icon"><i class="fas fa-sun"></i></span>
+                    <span>${t("nav.themeLight")}</span>
+                  </a>
+                  <a class="navbar-item" href="#" data-theme-option="dark">
+                    <span class="icon"><i class="fas fa-moon"></i></span>
+                    <span>${t("nav.themeDark")}</span>
+                  </a>
+                  <a class="navbar-item" href="#" data-theme-option="auto">
+                    <span class="icon"><i class="fas fa-circle-half-stroke"></i></span>
+                    <span>${t("nav.themeAuto")}</span>
+                  </a>
+                </div>
+              </div>
               <a class="navbar-item" href="#" id="langToggle">${t("nav.language")}</a>
             </div>
           </div>
@@ -113,11 +136,54 @@ export function initNavbar() {
     });
   }
 
+  initThemeDropdown();
+
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1023) {
       closeMenu();
     }
   });
+}
+
+// Загвар сонгох dropdown (Light / Dark / Auto)
+function initThemeDropdown() {
+  const dropdown = document.getElementById("themeDropdown");
+  const toggle = document.getElementById("themeToggle");
+  if (!dropdown || !toggle) return;
+
+  const options = dropdown.querySelectorAll("[data-theme-option]");
+
+  // Одоо сонгогдсон сонголтыг is-active болгож тэмдэглэнэ
+  function markActive() {
+    const current = getThemePreference();
+    options.forEach((option) => {
+      option.classList.toggle("is-active", option.dataset.themeOption === current);
+    });
+  }
+
+  // Мобайл (hover байхгүй) дээр товшиж нээнэ/хаана
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    dropdown.classList.toggle("is-active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", (event) => {
+      event.preventDefault();
+      setThemePreference(option.dataset.themeOption);
+      markActive();
+      dropdown.classList.remove("is-active");
+    });
+  });
+
+  // Dropdown-ийн гадна товшвол хаана
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("is-active");
+    }
+  });
+
+  markActive();
 }
 
 export function mountNavbar(root) {

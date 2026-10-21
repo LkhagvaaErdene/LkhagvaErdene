@@ -199,15 +199,10 @@ const ReferenceForConditionSettingMnMap = {
 };
 
 function toLangObject(enValue, mnValue = "") {
-  // Already localized values must not be nested a second time.
-  if (enValue && typeof enValue === "object" && !Array.isArray(enValue) && ("en" in enValue || "mn" in enValue)) {
-    return { en: enValue.en ?? "", mn: enValue.mn || mnValue || "" };
-  }
-  return { en: enValue ?? "", mn: mnValue ?? "" };
-}
-
-function originalText(value) {
-  return value && typeof value === "object" && !Array.isArray(value) ? (value.en ?? "") : value;
+  return {
+    en: enValue || "",
+    mn: mnValue || "",
+  };
 }
 
 const output = data.map((item) => {
@@ -221,41 +216,41 @@ const output = data.map((item) => {
 
   return {
     food_code: item.food_code,
-    food_group: toLangObject(item.food_group, foodGroupMnMap[originalText(item.food_group)]),
-    food_name: toLangObject(item.food_name, typeof item.native_name === "string" ? item.native_name : item.native_name?.mn),
+    food_group: toLangObject(item.food_group, foodGroupMnMap[item.food_group]),
+    food_name: toLangObject(item.food_name, item.native_name),
     scientific_name: item.scientific_name,
-    province: toLangObject(item.province, provinceMnMap[originalText(item.province)]),
+    province: toLangObject(item.province, provinceMnMap[item.province]),
     proximates: item.proximates,
     minerals: item.minerals,
     vitamins: item.vitamins,
     collection_information: {
-      "Collection area": toLangObject(collectionArea, collectionAreaMnMap[originalText(collectionArea)]),
+      "Collection area": toLangObject(collectionArea, collectionAreaMnMap[collectionArea]),
       "Collection date": collectionInfo["Collection date"],
-      "Basis of sample selection": toLangObject(basis, basisMnMap[originalText(basis)]),
-      "Additional collection information": toLangObject(additionalInfo, additionalInfoMnMap[originalText(additionalInfo)]),
+      "Basis of sample selection": toLangObject(basis, basisMnMap[basis]),
+      "Additional collection information": toLangObject(additionalInfo, additionalInfoMnMap[additionalInfo]),
     },
     edible_inedible_part: {
       "Weight of whole part (g/1 piece)": ediblePart["Weight of whole part (g/1 piece)"],
       "Weight of edible part (g/1 piece)": ediblePart["Weight of edible part (g/1 piece)"],
       "Inedible part (discarded part)": toLangObject(
         ediblePart["Inedible part (discarded part)"],
-        discardedPartMnMap[originalText(ediblePart["Inedible part (discarded part)"])],
+        discardedPartMnMap[ediblePart["Inedible part (discarded part)"]],
       ),
       "Weight of inedible part (g/1 piece)": ediblePart["Weight of inedible part (g/1 piece)"],
     },
     pretreatment_conditions: {
       "Cooking (processing) method": toLangObject(
         pretreatment["Cooking (processing) method"],
-        cookingMethodMnMap[originalText(pretreatment["Cooking (processing) method"])],
+        cookingMethodMnMap[pretreatment["Cooking (processing) method"]],
       ),
       "Other cooking (processing) conditions": toLangObject(
         pretreatment["Other cooking (processing) conditions"],
-        OtherCookingConditionsMnMap[originalText(pretreatment["Other cooking (processing) conditions"])],
+        OtherCookingConditionsMnMap[pretreatment["Other cooking (processing) conditions"]],
       ),
 
       "Reference for condition setting": toLangObject(
         pretreatment["Reference for condition setting"],
-        ReferenceForConditionSettingMnMap[originalText(pretreatment["Reference for condition setting"])],
+        ReferenceForConditionSettingMnMap[pretreatment["Reference for condition setting"]],
       ),
     },
   };

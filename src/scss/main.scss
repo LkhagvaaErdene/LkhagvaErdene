@@ -7,19 +7,62 @@ $primaryColorDark: color.scale($primaryColor, $lightness: -15%);
 $secondaryColor: #ff914d;
 $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 
-:root {
+// Light / Dark загварын өнгөний хувьсагчид
+@mixin light-vars {
   --border: #ececf2;
-  --sidebar-width: clamp(280px, 22vw, 340px); // Sidebar-ийн өргөн (280px-340px хооронд, дэлгэцийн 22%-ийг эзэлнэ)
   --sidebar-bg: #ffffff;
   --page-bg: #ffffff;
+  --navbar-bg: #f5f5f5;
   --text-main: #23262f;
   --text-soft: #6b7280;
+  --active-bg: #fff2e8;
+  --hover-bg: #f7f7fa;
+  --icon-btn-bg: #f2f3f5;
+  --icon-btn-color: #64748b;
+  --subtitle-color: #607089;
+  --overlay: rgba(15, 23, 42, 0.55);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+@mixin dark-vars {
+  --border: #2b2f38;
+  --sidebar-bg: #171a20;
+  --page-bg: #0f1115;
+  --navbar-bg: #12141a;
+  --text-main: #e6e8ee;
+  --text-soft: #9aa3b2;
+  --active-bg: #2b2118;
+  --hover-bg: #232832;
+  --icon-btn-bg: #2b2f38;
+  --icon-btn-color: #aab3c2;
+  --subtitle-color: #8fa3c0;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+:root {
+  --sidebar-width: clamp(280px, 22vw, 340px); // Sidebar-ийн өргөн (280px-340px хооронд, дэлгэцийн 22%-ийг эзэлнэ)
   --pink: #ff6f91;
   --green: #2bac73;
   --orange: #ff914d;
-  --active-bg: #fff2e8;
-  --hover-bg: #f7f7fa;
-  --overlay: rgba(15, 23, 42, 0.55);
+
+  @include light-vars;
+}
+
+// JS ажиллахгүй (data-theme байхгүй) үед системийн тохиргоог дагана
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-vars;
+  }
+}
+
+// JS-ээр сонгосон загвар (light | dark; auto бол системээс тооцоолж энд тавина)
+:root[data-theme="light"] {
+  @include light-vars;
+}
+
+:root[data-theme="dark"] {
+  @include dark-vars;
 }
 
 @import "../../node_modules/bulma/bulma";
@@ -103,7 +146,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
     min-width: unset;
     height: 100vh;
     z-index: 40;
-    background: #fff;
+    background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
     border-bottom: 0;
     padding: 1rem 1rem 2rem;
