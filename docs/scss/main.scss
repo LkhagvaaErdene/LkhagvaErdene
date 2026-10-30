@@ -73,6 +73,11 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 @import "./components/sidebarMenuList";
 @import "./layouts/pageTableContentsLayout";
 @import "./components/imageModal";
+@import "./components/map";
+@import "./components/overviewText";
+@import "./components/bookCard";
+@import "./components/pdfModal";
+@import "./components/footer";
 
 // Mobile (<768px) → Sidebar = slide menu (hidden → open)
 // Tablet (≤1023px) → зөвхөн хэмжээ багасгана
@@ -130,6 +135,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 @media screen and (max-width: 768px) {
   .app-shell {
     display: block; /* Sidebar + main layout-ийг stack болгоно */
+    height: auto;
   }
 
   .app-mobile-sidebar {
