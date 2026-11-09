@@ -5,7 +5,7 @@ import { escapeHtml } from "../fn/format.js";
 import { getCurrentLanguage, t } from "../i18n/i18n.js";
 import { getProvinceDisplayName, provinceNameMap } from "../components/map.js";
 import { loadMushroomData, filterMushrooms, filterRecords, provincesForSpecies, hasDatedRecords } from "../services/mushroomService.js";
-import { renderSafetyWarning, renderSpeciesCard, renderSpeciesModal, openSpeciesModal, bindSpeciesModal, fmt, displayName } from "../components/mushroomUi.js";
+import { renderSafetyWarning, renderSpeciesCard, renderSpeciesModal, openSpeciesModal, bindSpeciesModal, hydrateSpeciesImages, fmt, displayName } from "../components/mushroomUi.js";
 import { renderMushroomMapShell, mountMushroomMap, renderLegend, renderRecordPopup } from "../components/mushroomMap.js";
 
 const HABITATS = ["forest", "grassland", "wood"];
@@ -77,6 +77,7 @@ export async function renderMushroomAtlasPage() {
     const recs = filterRecords(data, f, list);
     $("atlasCount").textContent = fmt(t("mushroom.resultsCount"), { n: list.length });
     $("atlasCards").innerHTML = list.length ? list.map((m) => renderSpeciesCard(m)).join("") : `<div class="column is-12">${renderNotification(t("mushroom.noResults"), "warning")}</div>`;
+    hydrateSpeciesImages($("atlasCards"), data);
     $("atlasRecNote").textContent = data.records.length === 0 ? t("mushroom.noRecordsGlobal") : fmt(t("mushroom.recordsShown"), { n: recs.length });
     $("atlasLegend").innerHTML = renderLegend({ hasRecords: data.records.length > 0 });
     if (!map) return;

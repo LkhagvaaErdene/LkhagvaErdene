@@ -105,3 +105,32 @@ export function filterRecords(data, f = {}, speciesList = null) {
 }
 
 export const hasDatedRecords = (data) => data.records.some((r) => r.observationDate);
+
+// Real species photo from the public Wikipedia REST API (lead image of the species article), looked up
+// in the visitor's browser. No URLs are stored or invented; failures simply mean "no photo".
+const imageCache = new Map();
+export function fetchSpeciesImage(m) {
+  const title = m?.wikipediaTitle || m?.scientificName;
+  if (!title) return Promise.resolve(null);
+  if (!imageCache.has(title)) {
+    const key = `mmImg:${title}`;
+    let cached = null;
+    try { cached = JSON.parse(sessionStorage.getItem(key) || "null"); } catch {}
+    imageCache.set(
+      title,
+      cached
+        ? Promise.resolve(cached)
+        : fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, "_"))}`)
+            .then((r) => (r.ok ? r.json() : null))
+            .then((j) => {
+              const src = j?.thumbnail?.source || j?.originalimage?.source;
+              if (!src) return null;
+              const out = { url: src, pageUrl: j.content_urls?.desktop?.page || null };
+              try { sessionStorage.setItem(key, JSON.stringify(out)); } catch {}
+              return out;
+            })
+            .catch(() => null),
+    );
+  }
+  return imageCache.get(title);
+}

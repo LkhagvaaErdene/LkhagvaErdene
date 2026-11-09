@@ -25,14 +25,14 @@
 .mushroom-map { background: transparent;
   svg { width: 100%; height: auto; display: block; }
   svg use { display: none; } // hide the decorative pins of the original SVG so they are not mistaken for observations
-  svg path[name] { fill: #dfe7e2; stroke: #fff; stroke-width: 1; cursor: pointer; transition: fill 0.2s;
+  svg path[name] { fill: #e3f2ea; stroke: #fff; stroke-width: 1; cursor: pointer; transition: fill 0.2s;
     &:hover, &:focus { fill: #f6c89f; outline: none; }
-    &.mm-approx { fill: #7ec8a4; } &.mm-l1 { fill: #bfe3d0; } &.mm-l2 { fill: #8fd0b0; } &.mm-l3 { fill: #55b98a; } &.mm-l4 { fill: #2bac73; } }
-  svg text { pointer-events: none; fill: #23262f; font-size: 10px; }
+    &.mm-approx { fill: #7ed6a8; } &.mm-l1 { fill: #c6ecd8; } &.mm-l2 { fill: #a3dfc0; } &.mm-l3 { fill: #7ed6a8; } &.mm-l4 { fill: #4fc48d; } }
+  svg text { pointer-events: none; fill: #000 !important; stroke: none !important; font-size: 15px !important; font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important; }
 }
 :root[data-theme="dark"] .mushroom-map svg path[name] { fill: #2a3139; stroke: #0f1115;
   &.mm-approx { fill: #2f7d5c; } &.mm-l1 { fill: #25503f; } &.mm-l2 { fill: #2b6a50; } &.mm-l3 { fill: #2f8460; } &.mm-l4 { fill: #2bac73; } }
-:root[data-theme="dark"] .mushroom-map svg text { fill: #e6e8ee; }
+:root[data-theme="dark"] .mushroom-map svg text { fill: #fff !important; }
 .mm-marker { stroke: #fff; stroke-width: 1.5; cursor: pointer; fill: #7a7a7a;
   &--poisonous { fill: #f14668; } &--potentially_poisonous { fill: #ffb70f; } &--documented_edible { fill: #2bac73; }
   &.is-unverified { fill-opacity: 0.35; stroke: #23262f; stroke-dasharray: 2 2; }
@@ -41,3 +41,29 @@
 .mm-sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid #999;
   &--approx { background: #7ec8a4; } &--none { background: #dfe7e2; } &--ver { background: #f14668; border-radius: 50%; } &--unv { background: rgba(241,70,104,0.35); border-radius: 50%; border-style: dashed; } }
 @media screen and (max-width: 768px) { .mm-drop { padding: 1.5rem 0.5rem; } .mm-modal-card { width: 100vw; } }
+#atlasCards.columns { margin-left: 0; margin-right: 0; }
+
+// The added "Мөөг" menu would push the (already tight) navbar past 1440px; tighten spacing only in that band.
+@media screen and (min-width: 1400px) and (max-width: 1599px) {
+  .navbar .navbar-item, .navbar .navbar-link { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
+.mm-taxonomy { width: auto; min-width: 16rem; th { color: var(--text-soft); font-weight: 600; } }
+
+// Species photo behind cards: full-colour photo, dark gradient, white text, white action button
+.mm-card { position: relative; overflow: hidden; border-radius: 16px;
+  .mm-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 0.4s; }
+  .card-content, .card-footer { position: relative; z-index: 1; }
+  &.has-photo { min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; border-top-width: 0; color: #fff;
+    .mm-card-bg { opacity: 1; }
+    &::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.78) 100%); }
+    .card-content { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.65); }
+    .mm-latin, .mm-names { color: #fff; }
+    em.has-text-grey { color: #fff !important; font-style: normal; }
+    .mm-cat { border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,0.35); text-shadow: none; &.is-danger { background: #e5334f; color: #fff; } }
+    .mm-credit { margin-top: 0.5rem; a { color: #fff; } }
+    .card-footer { border-top: 0; background: transparent; padding: 0 1rem 1rem;
+      .mm-open { background: #fff; color: #3e5bd6; border-radius: 10px; font-weight: 700; text-decoration: none; text-shadow: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        &::after { content: "\2192"; margin-left: 0.5rem; } } } }
+  .mm-credit a { color: inherit; text-decoration: none; }
+}
+.mm-hero { margin-bottom: 1rem; img { width: 100%; max-height: 320px; object-fit: cover; border-radius: 12px; } }

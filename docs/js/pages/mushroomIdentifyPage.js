@@ -5,7 +5,7 @@ import { getCurrentLanguage, t } from "../i18n/i18n.js";
 import { loadMushroomData, provincesForSpecies } from "../services/mushroomService.js";
 import { getBackendStatus, identifyImage, IdentifyError, ACCEPTED_TYPES, MAX_FILE_BYTES } from "../services/identifyService.js";
 import { classifyIdentification } from "../fn/mushroomClassify.js";
-import { renderSafetyWarning, renderToxicityPanel, renderSpeciesDetail, renderCategoryBadge, fmt, CAT_META } from "../components/mushroomUi.js";
+import { renderSafetyWarning, renderToxicityPanel, renderSpeciesDetail, renderCategoryBadge, renderSummaryCard, hydrateHeroImage, fmt, CAT_META } from "../components/mushroomUi.js";
 import { renderMushroomMapShell, mountMushroomMap, renderLegend, renderRecordPopup } from "../components/mushroomMap.js";
 
 const ERR_KEY = { rate_limited: "errRate", upstream: "errUpstream", timeout: "errTimeout", too_large: "errTooLarge", bad_image: "errBadImage", network: "errNetwork", not_configured: "backendNotConfiguredTitle" };
@@ -172,11 +172,13 @@ function renderResults(res, data) {
     const dist = entry ? renderDistribution(entry, data) : "";
     document.getElementById("mmDetail").innerHTML = `
       <div class="mt-4">
+        <div id="mmHero"></div>
+        ${renderSummaryCard(entry, cat)}
         ${renderToxicityPanel(entry, cat, data)}
         ${entry ? `<section class="box">${renderSpeciesDetail(entry, data)}</section>` : ""}
         ${dist}
       </div>`;
-    if (entry) mountDist(entry, data);
+    if (entry) { mountDist(entry, data); hydrateHeroImage(document.getElementById("mmHero"), entry); }
   };
   box.querySelectorAll(".mm-pick").forEach((b) => b.addEventListener("click", () => showDetail(Number(b.dataset.i))));
   const first = c.candidates.findIndex((x) => x.entry);

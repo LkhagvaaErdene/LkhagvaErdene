@@ -1,6 +1,6 @@
 // Distribution layer on top of the EXISTING map.svg (same loader, same province paths and labels).
 import { loadMapSvg } from "../services/mapService.js";
-import { updateMapLabels, getProvinceDisplayName } from "./map.js";
+import { updateMapLabels, getProvinceDisplayName, provinceNameMap } from "./map.js";
 import { geoToSvg } from "../fn/geo.js";
 import { isConfirmedRecord } from "../services/mushroomService.js";
 import { escapeHtml } from "../fn/format.js";
@@ -18,6 +18,29 @@ export async function mountMushroomMap(hostId, { lang = "mn", onProvince, onMark
   host.innerHTML = await loadMapSvg();
   updateMapLabels(host, lang);
   const svg = host.querySelector("svg");
+  // The original SVG only labels 15 of its 22 provinces; label the rest here (this map only, original file untouched).
+  const labelled = new Set([...svg.querySelectorAll("text")].map((x) => x.textContent.trim()));
+  svg.querySelectorAll("path[name]").forEach((p) => {
+    const key = p.getAttribute("name");
+    const display = getProvinceDisplayName(key, lang);
+    const plain = provinceNameMap[key]?.[lang] || provinceNameMap[key]?.en;
+    if (labelled.has(display) || labelled.has(plain) || key === "Govi-Sumber") return;
+    const bb = p.getBBox();
+    const txt = document.createElementNS(SVG_NS, "text");
+    // Orkhon is tiny and sits next to Darkhan-Uul's label: nudge its label up and to the right.
+    const nudge = key === "Orkhon" ? { dx: 30, dy: -14 } : { dx: 0, dy: 0 };
+    txt.setAttribute("x", (bb.x + bb.width / 2 + nudge.dx).toFixed(1));
+    txt.setAttribute("y", (bb.y + bb.height / 2 + nudge.dy).toFixed(1));
+    txt.setAttribute("text-anchor", "middle");
+    txt.textContent = display;
+    svg.appendChild(txt);
+  });
+  // Crowded northern cluster (Selenge / Darkhan-Uul / Orkhon): spread the original labels slightly apart.
+  const shift = { Selenge: -12, "Darkhan-Uul": 6 };
+  svg.querySelectorAll("text").forEach((x) => {
+    const en = Object.keys(provinceNameMap).find((k) => [provinceNameMap[k].mn, provinceNameMap[k].en].includes(x.textContent.trim()));
+    if (en && shift[en]) x.setAttribute("y", String(Number(x.getAttribute("y")) + shift[en]));
+  });
   const layer = document.createElementNS(SVG_NS, "g");
   layer.setAttribute("class", "mushroom-markers");
   svg.appendChild(layer);

@@ -51,6 +51,8 @@ with sync_playwright() as p:
     t=pg.locator("#mmResults").inner_text()
     check("likely result: not presented as confirmed, edible caveat shown","БАТАЛГАА БИШ" in t and "БАТАЛГАА БИШ" in t and "Идэж болдог" in t.replace("идэж","Идэж") or "Идэж болдог" in t)
     check("toxicity panel present",pg.locator(".mm-tox").count()==1)
+    st=pg.locator(".mm-summary").inner_text(); check("summary card: name, toxicity, class/order/family",pg.locator(".mm-summary").count()==1 and "Boletus edulis" in st and "Agaricomycetes" in st and "Boletaceae" in st)
+    check("taxonomy table with ranks",pg.locator(".mm-taxonomy tr").count()==7)
     pg.wait_for_selector("#mmResultMap svg path[name]")
     check("result map shades documented provinces (Khentei crosswalk)",pg.locator("#mmResultMap path.mm-approx").count()>=1)
     check("no markers when no records",pg.locator("#mmResultMap .mm-marker").count()==0 and "координаттай" in pg.locator("#mmResults").inner_text())
@@ -89,12 +91,22 @@ with sync_playwright() as p:
     fx={"records":[{"id":"t1","speciesId":"boletus-edulis","scientificName":"Boletus edulis","country":"MN","province":"Ulaanbaatar","latitude":47.92,"longitude":106.92,"observationDate":"2021-08-10","habitat":"forest","verification":"research_grade","source":{"id":"kherlenchimeg2024","datasetName":"TEST FIXTURE"}},{"id":"t2","speciesId":"agaricus-campestris","scientificName":"Agaricus campestris","country":"MN","province":"Khovd","latitude":48.0,"longitude":91.64,"observationDate":"2019-07-01","verification":"unverified","source":{"id":"x"}},{"id":"bad","speciesId":"boletus-edulis","latitude":10,"longitude":10}]}
     pg.route("**/data/mushroomRecords.json",lambda r: r.fulfill(json=fx))
     pg.goto("http://127.0.0.1:8801/#/mushroom-atlas"); pg.wait_for_selector("#atlasCards .mm-card")
+    pg.wait_for_selector(".mm-marker")
     check("markers drawn; invalid-coordinate record dropped",pg.locator(".mm-marker").count()==2)
     check("verified vs unverified styling",pg.locator(".mm-marker.is-confirmed").count()==1 and pg.locator(".mm-marker.is-unverified").count()==1)
     pg.locator(".mm-marker.is-confirmed").dispatch_event("click"); tt=pg.locator("#atlasInfo").inner_text()
     check("marker popup shows name/date/source/verification","Boletus edulis" in tt and "2021-08-10" in tt and "TEST FIXTURE" in tt and "Судалгааны" in tt)
     check("date filter enabled and works",pg.locator("#fFrom").is_enabled()); pg.fill("#fFrom","2020-01-01"); pg.wait_for_timeout(100)
     check("date filter narrows markers",pg.locator(".mm-marker").count()==1 and pg.locator("#atlasCards .mm-card").count()==1)
+    ctx.close()
+    # 5b photo hydration, with the Wikipedia API STUBBED (real Wikipedia is not reachable from the sandbox)
+    ctx,pg=newpage(); 
+    from PIL import Image as _I; _I.new_rgb=None; _I.new("RGB",(300,200),(180,60,60)).save("/tmp/ph.jpg")
+    pg.route("https://en.wikipedia.org/api/rest_v1/page/summary/**",lambda r: r.fulfill(json={"thumbnail":{"source":"https://upload.test/p.jpg"},"content_urls":{"desktop":{"page":"https://en.wikipedia.org/wiki/X"}}}) if "Amanita_phalloides" in r.request.url or "Boletus" in r.request.url else r.fulfill(status=404,body="{}"))
+    pg.route("https://upload.test/**",lambda r: r.fulfill(path="/tmp/ph.jpg",content_type="image/jpeg"))
+    pg.goto("http://127.0.0.1:8801/#/mushroom-atlas"); pg.wait_for_selector("#atlasCards .mm-card"); pg.wait_for_selector(".mm-card.has-photo")
+    check("photo shown behind cards that have one; others unchanged",pg.locator(".mm-card.has-photo").count()==2 and pg.locator(".mm-card:not(.has-photo)").count()==14)
+    check("photo credit links to source page",pg.locator(".mm-card.has-photo .mm-credit a[href='https://en.wikipedia.org/wiki/X']").count()==2)
     ctx.close()
     # 6 mobile + english
     for lang in ("mn","en"):

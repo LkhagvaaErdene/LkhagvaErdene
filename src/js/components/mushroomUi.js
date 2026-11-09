@@ -1,6 +1,6 @@
 import { escapeHtml } from "../fn/format.js";
 import { getLocalizedValue, getCurrentLanguage, t } from "../i18n/i18n.js";
-import { provincesForSpecies, regionCodesOf, unmappedRegions } from "../services/mushroomService.js";
+import { provincesForSpecies, regionCodesOf, unmappedRegions, fetchSpeciesImage } from "../services/mushroomService.js";
 
 export const CAT_META = {
   poisonous: { cls: "is-danger", icon: "fa-skull-crossbones" },
@@ -77,18 +77,43 @@ export function renderSpeciesCard(m, { onclickAttr = "" } = {}) {
   const mn = m.mongolianName ? escapeHtml(m.mongolianName) : `<em class="has-text-grey">${t("mushroom.unverifiedName")}</em>`;
   return `
     <div class="column is-12-mobile is-6-tablet is-4-desktop">
-      <article class="card mm-card mm-card--${cat}">
+      <article class="card mm-card mm-card--${cat}" data-id="${escapeHtml(m.id)}">
+        <div class="mm-card-bg" aria-hidden="true"></div>
         <div class="card-content">
           <p class="mm-latin"><em>${escapeHtml(m.scientificName)}</em></p>
           <p class="mm-names">${mn}</p>
           <p class="mm-names is-size-7">${escapeHtml(m.englishName || "")}</p>
           <p class="mt-2">${renderCategoryBadge(cat)}</p>
+          <p class="mm-credit is-size-7"></p>
         </div>
         <footer class="card-footer">
           <button type="button" class="card-footer-item button is-ghost mm-open" data-id="${escapeHtml(m.id)}">${t("mushroom.viewDetails")}</button>
         </footer>
       </article>
     </div>`;
+}
+
+export function renderTaxonomy(m) {
+  const tx = { ...(m.taxonomy || {}), species: m.scientificName };
+  const rows = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
+    .filter((k) => tx[k])
+    .map((k) => `<tr><th>${t(`mushroom.rank_${k}`)}</th><td><em>${escapeHtml(tx[k])}</em></td></tr>`)
+    .join("");
+  return `<table class="table is-narrow mm-taxonomy"><tbody>${rows}</tbody></table><p class="help">${t("mushroom.taxonomyNote")}</p>`;
+}
+
+export function renderSummaryCard(m, category) {
+  const tx = m?.taxonomy || {};
+  const name = m?.mongolianName ? escapeHtml(m.mongolianName) : `<em class="has-text-grey">${t("mushroom.unverifiedName")}</em>`;
+  return `
+    <section class="box mm-summary" aria-label="${escapeHtml(t("mushroom.summaryTitle"))}">
+      <h3 class="title is-5">${t("mushroom.summaryTitle")}</h3>
+      <dl class="mm-fields">
+        <div class="mm-field"><dt>${t("mushroom.summaryName")}</dt><dd>${name}${m?.englishName ? ` · ${escapeHtml(m.englishName)}` : ""}<br><em>${escapeHtml(m?.scientificName || "")}</em></dd></div>
+        <div class="mm-field"><dt>${t("mushroom.summaryToxic")}</dt><dd>${renderCategoryBadge(category)}</dd></div>
+        ${m ? `<div class="mm-field"><dt>${t("mushroom.summaryClass")}</dt><dd>${t("mushroom.rank_class")}: <em>${escapeHtml(tx.class || "—")}</em> · ${t("mushroom.rank_order")}: <em>${escapeHtml(tx.order || "—")}</em> · ${t("mushroom.rank_family")}: <em>${escapeHtml(tx.family || "—")}</em></dd></div>` : ""}
+      </dl>
+    </section>`;
 }
 
 const field = (label, html) => (html ? `<div class="mm-field"><dt>${label}</dt><dd>${html}</dd></div>` : "");
@@ -118,7 +143,7 @@ export function renderSpeciesDetail(m, data) {
       <dl class="mm-fields">
         ${field(t("mushroom.mongolianName"), m.mongolianName ? escapeHtml(m.mongolianName) : `<em class="has-text-grey">${t("mushroom.unverifiedName")}</em>`)}
         ${field(t("mushroom.englishName"), escapeHtml(m.englishName || ""))}
-        ${field(t("mushroom.classification"), escapeHtml(taxText) + (tx.family ? "" : ""))}
+        
         ${field(t("mushroom.description"), L(m.description))}
         ${field(t("mushroom.cap"), L(m.morphology?.cap))}
         ${field(t("mushroom.stem"), L(m.morphology?.stem))}
@@ -127,6 +152,8 @@ export function renderSpeciesDetail(m, data) {
         ${field(t("mushroom.season"), L(m.season))}
         ${field(t("mushroom.identificationNotes"), L(m.identificationNotes))}
       </dl>
+      <h4 class="title is-6 mt-4">${t("mushroom.taxonomyTitle")}</h4>
+      ${renderTaxonomy(m)}
       <h4 class="title is-6 mt-4">${t("mushroom.distribution")}</h4>
       <dl class="mm-fields">
         ${field(t("mushroom.distRegions"), regionNames.join(", ") || "—")}
@@ -158,8 +185,9 @@ export function openSpeciesModal(m, data) {
   if (!modal) return;
   document.getElementById("mushroomModalTitle").textContent = displayName(m);
   document.getElementById("mushroomModalBody").innerHTML =
-    renderToxicityPanel(m, m.toxicity?.category || "toxicity_unknown", data) + renderSpeciesDetail(m, data);
+    `<div id="mmHero"></div>` + renderToxicityPanel(m, m.toxicity?.category || "toxicity_unknown", data) + renderSpeciesDetail(m, data);
   modal.classList.add("is-active");
+  hydrateHeroImage(document.getElementById("mmHero"), m);
 }
 
 export function bindSpeciesModal() {
@@ -169,4 +197,38 @@ export function bindSpeciesModal() {
   modal.querySelector(".modal-background").addEventListener("click", close);
   modal.querySelector(".delete").addEventListener("click", close);
   document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+}
+
+const creditHtml = (img) => {
+  const inner = `<span class="icon is-small"><i class="fas fa-image"></i></span> ${escapeHtml(t("mushroom.photoCredit"))}`;
+  return img.pageUrl
+    ? `<a href="${escapeHtml(img.pageUrl)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t("mushroom.photoLicenceHint"))}">${inner}</a>`
+    : inner;
+};
+
+// Loads a real photo behind each species card (silently skipped if unavailable).
+export function hydrateSpeciesImages(root, data) {
+  root.querySelectorAll(".mm-card[data-id]").forEach(async (card) => {
+    const m = data.byId.get(card.dataset.id);
+    const img = m && (await fetchSpeciesImage(m));
+    if (!img || !card.isConnected) return;
+    const bg = card.querySelector(".mm-card-bg");
+    const probe = new Image();
+    probe.onload = () => {
+      bg.style.backgroundImage = `url("${img.url.replace(/"/g, "%22")}")`;
+      card.classList.add("has-photo");
+      card.querySelector(".mm-credit").innerHTML = creditHtml(img);
+    };
+    probe.src = img.url;
+  });
+}
+
+export async function hydrateHeroImage(container, m) {
+  const img = await fetchSpeciesImage(m);
+  if (!img || !container.isConnected) return;
+  const probe = new Image();
+  probe.onload = () => {
+    container.innerHTML = `<figure class="mm-hero"><img src="${escapeHtml(img.url)}" alt="${escapeHtml(m.scientificName)}" loading="lazy" /><figcaption class="help">${creditHtml(img)}</figcaption></figure>`;
+  };
+  probe.src = img.url;
 }
