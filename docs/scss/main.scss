@@ -78,6 +78,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 @import "./components/bookCard";
 @import "./components/pdfModal";
 @import "./components/footer";
+@import "./components/mushroom";
 
 // Mobile (<768px) → Sidebar = slide menu (hidden → open)
 // Tablet (≤1023px) → зөвхөн хэмжээ багасгана

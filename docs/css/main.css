@@ -22918,6 +22918,391 @@ has-background-danger.is-hoverable:active {
   border: none;
 }
 
+.map-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+#svg-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateX(-4%);
+}
+#svg-container svg path {
+  fill: #2bac73;
+  stroke: #fff;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+#svg-container svg path:hover {
+  fill: #ff914d;
+}
+
+.app-overview-text {
+  height: 100%;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.app-txt {
+  font-size: clamp(0.8rem, 0.6vw + 0.55rem, 0.95rem);
+  line-height: 1.75;
+  color: var(--text-main);
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.app-overview-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-overview-text::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 999px;
+}
+
+.book-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-cover {
+  width: 100%;
+  display: block;
+}
+
+.book-description {
+  flex: 1;
+  text-align: justify;
+  height: 220px;
+  min-height: 220px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.book-footer {
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content.book-pdf-modal-content {
+  width: 88vw; /* 95vw байсан */
+  height: 95vh;
+  max-width: none;
+  overflow: hidden;
+}
+
+.book-pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.modal {
+  z-index: 2000;
+}
+
+.app-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: 3rem;
+  background: var(--sidebar-bg);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+}
+.app-footer .title {
+  margin-bottom: 1rem;
+  color: var(--text-soft);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+.app-footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+.app-footer li {
+  margin-bottom: 0.5rem;
+}
+.app-footer img {
+  height: 1rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+.app-footer li,
+.app-footer a,
+.app-footer p {
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+}
+.app-footer a {
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+.app-footer a:hover {
+  color: #2bac73;
+}
+
+.mm-safety {
+  border: 2px solid #f14668;
+}
+
+.mm-drop {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-soft);
+  transition: background 0.2s, border-color 0.2s;
+}
+.mm-drop:hover, .mm-drop:focus, .mm-drop.is-over {
+  background: var(--hover-bg);
+  border-color: var(--green);
+  outline: none;
+}
+
+.mm-preview img {
+  max-width: 100%;
+  max-height: 360px;
+  border-radius: 12px;
+  display: block;
+}
+
+.mm-latin {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.mm-cand {
+  margin-bottom: 0.75rem;
+}
+.mm-cand.is-selected {
+  border: 2px solid var(--green);
+}
+.mm-cand .mm-pick {
+  margin-top: 0.5rem;
+}
+
+.mm-cat {
+  white-space: normal;
+  height: auto;
+  padding: 0.35rem 0.75rem;
+}
+
+.mm-tox {
+  border-left: 8px solid #7a7a7a;
+}
+.mm-tox--poisonous {
+  border-left-color: #f14668;
+}
+.mm-tox--potentially_poisonous {
+  border-left-color: #ffb70f;
+}
+.mm-tox--documented_edible {
+  border-left-color: #2bac73;
+}
+.mm-tox--identification_inconclusive {
+  border-left-color: #3e8ed0;
+}
+
+.mm-card {
+  height: 100%;
+  border-top: 5px solid #7a7a7a;
+  background: var(--sidebar-bg);
+  color: var(--text-main);
+}
+.mm-card--poisonous {
+  border-top-color: #f14668;
+}
+.mm-card--potentially_poisonous {
+  border-top-color: #ffb70f;
+}
+.mm-card--documented_edible {
+  border-top-color: #2bac73;
+}
+
+.mm-fields dt {
+  font-weight: 600;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+.mm-fields dd {
+  margin: 0;
+}
+
+.mm-refs {
+  font-size: 0.85rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.mm-modal-card {
+  width: min(900px, 96vw);
+}
+
+.mm-filters label.label {
+  font-size: 0.85rem;
+}
+
+.mm-info, .mm-popup {
+  margin-top: 0.75rem;
+}
+
+.mm-popup-table th {
+  width: 38%;
+}
+
+.mushroom-map {
+  background: transparent;
+}
+.mushroom-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mushroom-map svg use {
+  display: none;
+}
+.mushroom-map svg path[name] {
+  fill: #dfe7e2;
+  stroke: #fff;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.mushroom-map svg path[name]:hover, .mushroom-map svg path[name]:focus {
+  fill: #f6c89f;
+  outline: none;
+}
+.mushroom-map svg path[name].mm-approx {
+  fill: #7ec8a4;
+}
+.mushroom-map svg path[name].mm-l1 {
+  fill: #bfe3d0;
+}
+.mushroom-map svg path[name].mm-l2 {
+  fill: #8fd0b0;
+}
+.mushroom-map svg path[name].mm-l3 {
+  fill: #55b98a;
+}
+.mushroom-map svg path[name].mm-l4 {
+  fill: #2bac73;
+}
+.mushroom-map svg text {
+  pointer-events: none;
+  fill: #23262f;
+  font-size: 10px;
+}
+
+:root[data-theme=dark] .mushroom-map svg path[name] {
+  fill: #2a3139;
+  stroke: #0f1115;
+}
+:root[data-theme=dark] .mushroom-map svg path[name].mm-approx {
+  fill: #2f7d5c;
+}
+:root[data-theme=dark] .mushroom-map svg path[name].mm-l1 {
+  fill: #25503f;
+}
+:root[data-theme=dark] .mushroom-map svg path[name].mm-l2 {
+  fill: #2b6a50;
+}
+:root[data-theme=dark] .mushroom-map svg path[name].mm-l3 {
+  fill: #2f8460;
+}
+:root[data-theme=dark] .mushroom-map svg path[name].mm-l4 {
+  fill: #2bac73;
+}
+
+:root[data-theme=dark] .mushroom-map svg text {
+  fill: #e6e8ee;
+}
+
+.mm-marker {
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: pointer;
+  fill: #7a7a7a;
+}
+.mm-marker--poisonous {
+  fill: #f14668;
+}
+.mm-marker--potentially_poisonous {
+  fill: #ffb70f;
+}
+.mm-marker--documented_edible {
+  fill: #2bac73;
+}
+.mm-marker.is-unverified {
+  fill-opacity: 0.35;
+  stroke: #23262f;
+  stroke-dasharray: 2 2;
+}
+.mm-marker:focus {
+  outline: 2px solid #3e8ed0;
+}
+
+.mm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+.mm-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mm-sw {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid #999;
+}
+.mm-sw--approx {
+  background: #7ec8a4;
+}
+.mm-sw--none {
+  background: #dfe7e2;
+}
+.mm-sw--ver {
+  background: #f14668;
+  border-radius: 50%;
+}
+.mm-sw--unv {
+  background: rgba(241, 70, 104, 0.35);
+  border-radius: 50%;
+  border-style: dashed;
+}
+
+@media screen and (max-width: 768px) {
+  .mm-drop {
+    padding: 1.5rem 0.5rem;
+  }
+  .mm-modal-card {
+    width: 100vw;
+  }
+}
+#atlasCards.columns {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) {
+  .navbar .navbar-item, .navbar .navbar-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 /* =========================
    DESKTOP (>=769px)
 ========================= */
@@ -22958,6 +23343,7 @@ has-background-danger.is-hoverable:active {
 @media screen and (max-width: 768px) {
   .app-shell {
     display: block; /* Sidebar + main layout-ийг stack болгоно */
+    height: auto;
   }
   .app-mobile-sidebar {
     display: block; /* Mobile дээр гарч ирэх ↪ button */
@@ -23017,149 +23403,3 @@ has-background-danger.is-hoverable:active {
 }
 
 /*# sourceMappingURL=main.css.map */
-
-/* ===== 2.10–2.13: map, overviewText, bookCard, pdfModal, footer =====
-   Эдгээрийг scss-ээс гараар хөрвүүлж нэмсэн. `npm run sass` ажиллуулбал scss-ээс бүхэлд нь дахин үүснэ. */
-.map-wrap {
-  width: 100%;
-  overflow: hidden;
-}
-
-#svg-container svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform: translateX(-4%);
-}
-
-#svg-container svg path {
-  fill: #2bac73;
-  stroke: #fff;
-  stroke-width: 1;
-  cursor: pointer;
-  transition: fill 0.2s;
-}
-
-#svg-container svg path:hover {
-  fill: #ff914d;
-}
-
-.app-overview-text {
-  height: 100%;
-  max-height: 420px;
-  overflow-y: auto;
-}
-
-.app-txt {
-  font-size: clamp(0.8rem, 0.6vw + 0.55rem, 0.95rem);
-  line-height: 1.75;
-  color: var(--text-main);
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-
-.app-overview-text::-webkit-scrollbar {
-  width: 6px;
-}
-
-.app-overview-text::-webkit-scrollbar-thumb {
-  background: #9ca3af;
-  border-radius: 999px;
-}
-
-.book-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.book-cover {
-  width: 100%;
-  display: block;
-}
-
-.book-description {
-  flex: 1;
-  text-align: justify;
-  height: 220px;
-  min-height: 220px;
-  max-height: 220px;
-  overflow-y: auto;
-}
-
-.book-footer {
-  justify-content: center;
-  padding: 1rem;
-}
-
-.modal-content.book-pdf-modal-content {
-  width: 88vw;
-  height: 95vh;
-  max-width: none;
-  overflow: hidden;
-}
-
-.book-pdf-frame {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* [ЗАСВАР] sticky navbar (z-index: 1000) нь modal-ийг дарахгүй байхаар */
-.modal {
-  z-index: 2000;
-}
-
-.app-footer {
-  position: relative;
-  z-index: 10;
-  margin-top: 3rem;
-  background: var(--sidebar-bg);
-  border-top: 1px solid var(--border);
-  padding: 2rem 1.5rem;
-}
-
-.app-footer .title {
-  margin-bottom: 1rem;
-  color: var(--text-soft);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-}
-
-.app-footer ul {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.app-footer li {
-  margin-bottom: 0.5rem;
-}
-
-.app-footer img {
-  height: 1rem;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
-
-.app-footer li,
-.app-footer a,
-.app-footer p {
-  font-size: clamp(0.8rem, 1vw, 0.95rem);
-}
-
-.app-footer a {
-  color: var(--text-main);
-  transition: color 0.2s ease;
-}
-
-.app-footer a:hover {
-  color: #2bac73;
-}
-
-@media screen and (max-width: 768px) {
-  .app-shell {
-    height: auto;
-  }
-}

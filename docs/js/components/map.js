@@ -46,7 +46,7 @@ export async function bindMapEvents(nutritionData, lang = "en") {
     });
   });
 }
-const provinceNameMap = {
+export const provinceNameMap = {
   Uvs: { en: "Uvs", mn: "Увс" },
   Khovd: { en: "Khovd", mn: "Ховд" },
   Dornod: { en: "Dornod", mn: "Дорнод" },
@@ -68,6 +68,8 @@ const provinceNameMap = {
   Sukhbaatar: { en: "Sukhbaatar", mn: "Сүхбаатар" },
   Bayankhongor: { en: "Bayankhongor", mn: "Баянхонгор" },
   "Bayan-Ulgii": { en: "Bayan-Ulgii", mn: "Баян-Өлгий" },
+  Orkhon: { en: "Orkhon", mn: "Орхон" },
+  "Govi-Sumber": { en: "Govi-Sumber", mn: "Говьсүмбэр" },
 };
 const provinceTitleMap = {
   Ulaanbaatar: {
@@ -75,7 +77,7 @@ const provinceTitleMap = {
     mn: "Улаанбаатар хот",
   },
 };
-const updateMapLabels = function updateMapLabels(svgContainer, lang = "en") {
+export const updateMapLabels = function updateMapLabels(svgContainer, lang = "en") {
   svgContainer.querySelectorAll("svg text").forEach((text) => {
     const enName = text.textContent.trim();
     const names = provinceNameMap[enName];
@@ -84,3 +86,8 @@ const updateMapLabels = function updateMapLabels(svgContainer, lang = "en") {
     }
   });
 };
+
+// Display name for a province key used by map.svg (shared with the mushroom atlas).
+export function getProvinceDisplayName(nameEn, lang = "en") {
+  return provinceTitleMap[nameEn]?.[lang] || provinceNameMap[nameEn]?.[lang] || nameEn;
+}

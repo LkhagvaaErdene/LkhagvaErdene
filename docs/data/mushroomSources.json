@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "sources": {
+  "kherlenchimeg2024": {
+   "type": "checklist",
+   "citation": "Kherlenchimeg N, Burenbaatar G, Baasanmunkh S, Tsegmed Z, Urgamal M, Bau T, Han S-K, Oh S-Y, Choi HJ (2024). Improved Understanding of the Macrofungal Diversity of Mongolia: Species Richness, Conservation Status, and An Annotated Checklist. Mycobiology 52(1):13-29.",
+   "doi": "10.1080/12298093.2023.2297485",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10896165",
+   "license": "CC BY-NC 4.0",
+   "supports": [
+    "presence in Mongolia",
+    "phytogeographic regions (RD)",
+    "regional conservation status (CS)",
+    "herbarium voucher numbers (UBA)"
+   ],
+   "note": "Checklist gives region-level distribution only; it does not publish coordinates."
+  },
+  "pmc4057534": {
+   "type": "review",
+   "citation": "Mushroom poisoning (mycetism) review, PubMed Central article PMC4057534 (title/authors not captured during retrieval - see URL).",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4057534",
+   "supports": [
+    "Amanita phalloides amatoxin hepatotoxicity",
+    "Gyromitra esculenta neurotoxicity",
+    "Tricholoma equestre reclassified as toxic (rhabdomyolysis)"
+   ]
+  },
+  "tjem2025": {
+   "type": "review",
+   "citation": "Mushroom poisoning: An updated review. Turk J Emerg Med 2025;25(1):10-16.",
+   "doi": "10.4103/tjem.tjem_129_24",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11774429",
+   "supports": [
+    "amatoxin deaths, A. phalloides",
+    "A. phalloides resembles Agaricus bisporus"
+   ]
+  },
+  "gouvinhas2024": {
+   "type": "review",
+   "citation": "Gouvinhas I, Silva J, Alves MJ, Garcia J (2024). The most dreadful mushroom toxins: a review of their toxicological mechanisms, chemical structural characteristics, and treatment. EXCLI J 23:833-859.",
+   "url": "https://excli.de/excli/article/view/7257/5022",
+   "supports": [
+    "gyromitrin / Gyromitra esculenta"
+   ]
+  },
+  "michelot2003": {
+   "type": "review",
+   "citation": "Michelot D, Melendez-Howell LM (2003). Amanita muscaria: chemistry, biology, toxicology, and ethnomycology. Mycological Research 107(2):131-146.",
+   "url": "https://bibliography.maps.org/resources/download/16306",
+   "supports": [
+    "A. muscaria / A. pantherina ibotenic acid and muscimol poisoning",
+    "A. pantherina often mistaken for other species"
+   ]
+  },
+  "peglerwatling": {
+   "type": "list",
+   "citation": "BioImages poisonous-fungi list (attributed on the page to Pegler DN & Watling R).",
+   "url": "https://www.bioimages.org.uk/bioinfohtml/html/b151340.htm",
+   "supports": [
+    "gastro-enteric irritants: Russula emetica, Hypholoma fasciculare, Agaricus xanthodermus",
+    "cytolytic poisoning: Amanita phalloides",
+    "muscimol/ibotenic acid: A. muscaria, A. pantherina"
+   ]
+  },
+  "merckvet": {
+   "type": "reference",
+   "citation": "Merck Veterinary Manual - Poisonous mushrooms (toxin latent period < 3 hr after ingestion).",
+   "url": "https://www.merckvetmanual.com/toxicology/poisonous-mushrooms/toxin-latent-period-3-hr-after-ingestion-of-mushrooms",
+   "supports": [
+    "animal toxicosis: muscimol (A. muscaria/pantherina)",
+    "animal toxicosis: Russula emetica GI irritation"
+   ]
+  },
+  "dtschaerzteblatt2020": {
+   "type": "review",
+   "citation": "Mushroom Poisoning. Dtsch Arztebl Int 2020 (Oct 17) - abstract via QxMD.",
+   "url": "https://www.qxmd.com/r/33559585",
+   "supports": [
+    "delayed (6-24 h or more) life-threatening syndromes incl. phalloides, gyromitra, rhabdomyolysis"
+   ]
+  },
+  "beug2009": {
+   "type": "review",
+   "citation": "Beug MW, Fungi magazine, Summer 2009 (article on mushroom poisoning; title not captured).",
+   "url": "https://www.fungimag.com/summer-09-articles/Beug.pdf",
+   "supports": [
+    "Tricholoma equestre rhabdomyolysis after large ingestions (France, Poland)"
+   ]
+  },
+  "bulam2018": {
+   "type": "paper",
+   "citation": "Bulam S, Ustun NS, Peksen A (2018). The Most Popular Edible Wild Mushrooms in Vezirkopru District of Samsun Province. Turkish J Agric Food Sci Technol 6(2):189-194.",
+   "doi": "10.24925/turjaf.v6i2.189-194.1547",
+   "url": "https://agrifoodscience.com/index.php/TURJAF/article/view/1547",
+   "region": "Turkey",
+   "supports": [
+    "Lactarius deliciosus, Macrolepiota procera edible (Turkey)"
+   ]
+  },
+  "niveiro2009": {
+   "type": "paper",
+   "citation": "Niveiro N, Popoff OF, Alberto EO (2009). Edible wild mushrooms: exotic species of Suillus and Lactarius (Argentina).",
+   "url": "https://revistas.unne.edu.ar/index.php/bon/article/download/1349/1121/3807",
+   "region": "Argentina",
+   "supports": [
+    "Lactarius deliciosus, Suillus granulatus, Suillus luteus, Agaricus campestris, Coprinus comatus listed as edible wild mushrooms"
+   ]
+  },
+  "sif2022": {
+   "type": "paper",
+   "citation": "Edible wild mushrooms of Himachal Pradesh, India. Studies in Fungi 2022 (title not captured).",
+   "doi": "10.48130/SIF-2022-0015",
+   "url": "https://maxapress.com/article/doi/10.48130/SIF-2022-0015",
+   "region": "India",
+   "supports": [
+    "Agaricus campestris, Boletus edulis, Cantharellus cibarius, Lactarius deliciosus consumed"
+   ]
+  },
+  "foods2022": {
+   "type": "paper",
+   "citation": "Biopreservation of Wild Edible Mushrooms (Boletus edulis, Cantharellus, and Rozites caperata) with Lactic Acid Bacteria Possessing Antimicrobial Properties. Foods 2022;11(12):1800.",
+   "doi": "10.3390/foods11121800",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9223197/",
+   "region": "Lithuania / Central-Eastern Europe",
+   "supports": [
+    "Suillus luteus, Boletus edulis, Cantharellus cibarius popular edible wild mushrooms"
+   ]
+  },
+  "ozsari2024": {
+   "type": "paper",
+   "citation": "Ozsari S et al. (2024). Deep Learning-Based Classification of Macrofungi. Sensors 24(22):7189.",
+   "doi": "10.3390/s24227189",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11598773/",
+   "supports": [
+    "B. edulis, C. cibarius, L. deliciosus described as edible; A. pantherina psychoactive (ibotenic acid, muscimol)"
+   ]
+  },
+  "laregion2026": {
+   "type": "popular-press",
+   "citation": "La Region (Ourense), autumn mushroom season infographic, 18 Oct 2026. Popular press - low evidential weight.",
+   "url": "https://www.laregion.es/provincia/infografia-empieza-temporada-setas-otonales_1_20261018-4456173.html",
+   "supports": [
+    "Lactarius deliciosus can be confused with Lactarius torminosus (toxic)"
+   ]
+  },
+  "kindwise": {
+   "type": "service",
+   "citation": "Kindwise Mushroom.id API (llms.txt): edibility information is for reference only; never rely on it for foraging safety decisions.",
+   "url": "https://mushroom.kindwise.com/llms.txt"
+  }
+ }
+}

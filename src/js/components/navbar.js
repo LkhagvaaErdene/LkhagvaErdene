@@ -46,6 +46,23 @@ export function renderNavbar() {
                 <span>${t("nav.books")}</span>
               </a>
 
+              <div class="navbar-item has-dropdown is-hoverable" id="mushroomDropdown">
+                <a class="navbar-link" href="#" id="mushroomMenuToggle" role="button" aria-haspopup="true">
+                  <span class="icon has-text-success"><i class="fas fa-seedling"></i></span>
+                  <span>${t("mushroom.navMenu")}</span>
+                </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="#/mushrooms">
+                    <span class="icon has-text-success"><i class="fas fa-camera"></i></span>
+                    <span>${t("mushroom.navIdentify")}</span>
+                  </a>
+                  <a class="navbar-item" href="#/mushroom-atlas">
+                    <span class="icon has-text-success"><i class="fas fa-map-location-dot"></i></span>
+                    <span>${t("mushroom.navAtlas")}</span>
+                  </a>
+                </div>
+              </div>
+
               <a class="navbar-item" href="#/contact">
                 <span class="icon has-text-danger">
                   <i class="fas fa-address-card"></i>
@@ -137,6 +154,7 @@ export function initNavbar() {
   }
 
   initThemeDropdown();
+  initMushroomDropdown();
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1023) {
@@ -190,4 +208,19 @@ export function mountNavbar(root) {
   if (!root) return;
   root.innerHTML = renderNavbar();
   initNavbar();
+}
+
+// "Мөөг" dropdown: click/tap toggle (hover alone does not work on touch screens)
+function initMushroomDropdown() {
+  const dd = document.getElementById("mushroomDropdown");
+  const toggle = document.getElementById("mushroomMenuToggle");
+  if (!dd || !toggle) return;
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    dd.classList.toggle("is-active");
+  });
+  dd.querySelectorAll(".navbar-dropdown a").forEach((a) => a.addEventListener("click", () => dd.classList.remove("is-active")));
+  document.addEventListener("click", (event) => {
+    if (!dd.contains(event.target)) dd.classList.remove("is-active");
+  });
 }

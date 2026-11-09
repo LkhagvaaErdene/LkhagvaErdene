@@ -1,0 +1,49 @@
+// Mushroom identification & atlas (uses theme variables from main.scss)
+.mm-safety { border: 2px solid #f14668; }
+.mm-drop {
+  border: 2px dashed var(--border); border-radius: 12px; padding: 2rem 1rem; text-align: center; cursor: pointer;
+  color: var(--text-soft); transition: background 0.2s, border-color 0.2s;
+  &:hover, &:focus, &.is-over { background: var(--hover-bg); border-color: var(--green); outline: none; }
+}
+.mm-preview img { max-width: 100%; max-height: 360px; border-radius: 12px; display: block; }
+.mm-latin { font-size: 1.1rem; font-weight: 600; color: var(--text-main); }
+.mm-cand { margin-bottom: 0.75rem; &.is-selected { border: 2px solid var(--green); } .mm-pick { margin-top: 0.5rem; } }
+.mm-cat { white-space: normal; height: auto; padding: 0.35rem 0.75rem; }
+.mm-tox { border-left: 8px solid #7a7a7a;
+  &--poisonous { border-left-color: #f14668; } &--potentially_poisonous { border-left-color: #ffb70f; }
+  &--documented_edible { border-left-color: #2bac73; } &--identification_inconclusive { border-left-color: #3e8ed0; } }
+.mm-card { height: 100%; border-top: 5px solid #7a7a7a; background: var(--sidebar-bg); color: var(--text-main);
+  &--poisonous { border-top-color: #f14668; } &--potentially_poisonous { border-top-color: #ffb70f; } &--documented_edible { border-top-color: #2bac73; } }
+.mm-fields { dt { font-weight: 600; color: var(--text-soft); font-size: 0.85rem; margin-top: 0.6rem; } dd { margin: 0; } }
+.mm-refs { font-size: 0.85rem; padding-left: 1.1rem; list-style: disc; }
+.mm-modal-card { width: min(900px, 96vw); }
+.mm-filters label.label { font-size: 0.85rem; }
+.mm-info, .mm-popup { margin-top: 0.75rem; }
+.mm-popup-table th { width: 38%; }
+
+// Map (re-uses existing map.svg; styled separately from the overview map)
+.mushroom-map { background: transparent;
+  svg { width: 100%; height: auto; display: block; }
+  svg use { display: none; } // hide the decorative pins of the original SVG so they are not mistaken for observations
+  svg path[name] { fill: #dfe7e2; stroke: #fff; stroke-width: 1; cursor: pointer; transition: fill 0.2s;
+    &:hover, &:focus { fill: #f6c89f; outline: none; }
+    &.mm-approx { fill: #7ec8a4; } &.mm-l1 { fill: #bfe3d0; } &.mm-l2 { fill: #8fd0b0; } &.mm-l3 { fill: #55b98a; } &.mm-l4 { fill: #2bac73; } }
+  svg text { pointer-events: none; fill: #23262f; font-size: 10px; }
+}
+:root[data-theme="dark"] .mushroom-map svg path[name] { fill: #2a3139; stroke: #0f1115;
+  &.mm-approx { fill: #2f7d5c; } &.mm-l1 { fill: #25503f; } &.mm-l2 { fill: #2b6a50; } &.mm-l3 { fill: #2f8460; } &.mm-l4 { fill: #2bac73; } }
+:root[data-theme="dark"] .mushroom-map svg text { fill: #e6e8ee; }
+.mm-marker { stroke: #fff; stroke-width: 1.5; cursor: pointer; fill: #7a7a7a;
+  &--poisonous { fill: #f14668; } &--potentially_poisonous { fill: #ffb70f; } &--documented_edible { fill: #2bac73; }
+  &.is-unverified { fill-opacity: 0.35; stroke: #23262f; stroke-dasharray: 2 2; }
+  &:focus { outline: 2px solid #3e8ed0; } }
+.mm-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.85rem; margin: 0.5rem 0; li { display: flex; align-items: center; gap: 0.4rem; } }
+.mm-sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid #999;
+  &--approx { background: #7ec8a4; } &--none { background: #dfe7e2; } &--ver { background: #f14668; border-radius: 50%; } &--unv { background: rgba(241,70,104,0.35); border-radius: 50%; border-style: dashed; } }
+@media screen and (max-width: 768px) { .mm-drop { padding: 1.5rem 0.5rem; } .mm-modal-card { width: 100vw; } }
+#atlasCards.columns { margin-left: 0; margin-right: 0; }
+
+// The added "Мөөг" menu would push the (already tight) navbar past 1440px; tighten spacing only in that band.
+@media screen and (min-width: 1400px) and (max-width: 1599px) {
+  .navbar .navbar-item, .navbar .navbar-link { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
