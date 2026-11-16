@@ -1,0 +1,2157 @@
+{
+ "schemaVersion": 1,
+ "generatedFor": "Mongolian Mushroom Identification SPA",
+ "lastUpdated": "2026-11-02",
+ "mushrooms": [
+  {
+   "id": "amanita-phalloides",
+   "scientificName": "Amanita phalloides",
+   "authority": "(Vaill. ex Fr.) Link",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Death cap",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Amanitaceae",
+    "genus": "Amanita"
+   },
+   "description": {
+    "mn": "Дэлхий дахинд мөөгний хордлогоор үхэх тохиолдлын ихэнхийн шалтгаан болдог, маш хортой мөөг.",
+    "en": "A highly dangerous mushroom responsible for most fatal mushroom poisonings worldwide."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Чидун ногоон, шаргал эсвэл цагаавтар; гөлгөр, хуурай дээрээ гялалзсан.",
+     "en": "Olive-green, yellowish or whitish; smooth, often shiny."
+    },
+    "stem": {
+     "mn": "Цагаан иш; дээд хэсэгт цагираг, ишний суурь хавдсан, уут хэлбэрийн цагаан бүрхэвчтэй (волва).",
+     "en": "White stem with a ring near the top and a swollen base enclosed in a sac-like white volva."
+    },
+    "hymenophore": {
+     "mn": "Цагаан, ишнээс салангид хавтас.",
+     "en": "White gills not attached to the stem."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд, мод (мичориз) хамт ургадаг. Монгол дахь тусгай орчны мэдээлэл баталгаажаагүй.",
+     "en": "Forests, living in association with trees (mycorrhizal). Mongolia-specific microhabitat not verified."
+    }
+   },
+   "season": {
+    "mn": "Намар (ерөнхий мэдээлэл)",
+    "en": "Autumn (general information)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA08123-B"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "life-threatening",
+    "toxins": [
+     "amatoxins (cyclic peptides)"
+    ],
+    "humans": {
+     "mn": "Амитоксин агуулдаг; элэг, бөөрний хүнд гэмтэл үүсгэж, үхэлд хүргэж болно. Хоол хийх, хатаах, хөлдөөх нь хоргүйжүүлдэггүй.",
+     "en": "Contains amatoxins that can cause severe liver and kidney failure and death. Cooking, drying or freezing does not make it safe."
+    },
+    "animals": null,
+    "symptoms": {
+     "mn": "Шинж тэмдэг ихэвчлэн 6–24 цагийн дараа (заримдаа түүнээс удаан) илэрч, бөөлжих, хүнд суулгалт, дараа нь элэг, бөөрний дутагдалд орно.",
+     "en": "Symptoms are typically delayed (about 6–24 h or longer): vomiting and severe diarrhoea, followed by liver and kidney failure."
+    },
+    "warnings": [
+     {
+      "mn": "Шинж тэмдэг илрэхийг хүлээхгүй, иссэн гэж сэжиглэвэл даруй эмнэлгийн яаралтай тусламжид хандана.",
+      "en": "Do not wait for symptoms: seek emergency medical care immediately if ingestion is suspected."
+     },
+     {
+      "mn": "Agaricus төрлийн идэж болдог мөөгтэй (жишээ нь A. bisporus) төстэй байж болно.",
+      "en": "Can resemble edible Agaricus mushrooms (e.g. A. bisporus)."
+     }
+    ],
+    "sourceIds": [
+     "pmc4057534",
+     "tjem2025",
+     "peglerwatling",
+     "dtschaerzteblatt2020"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Идэж болохгүй.",
+     "en": "Not edible."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Ишний суурийг бүтэн ухаж волва байгаа эсэхийг, мөн цагираг, цагаан хавтсыг шалгана. Зөвхөн малгайн өнгөөр ялгаж болохгүй.",
+    "en": "Dig out the whole stem base and check for a volva, ring and white gills. Never rely on cap colour alone."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Agaricus campestris",
+     "id": "agaricus-campestris",
+     "risk": "dangerous",
+     "note": {
+      "mn": "Залуу Agaricus мөөг (хавтас нь эхэндээ цайвар) A. phalloides-той андуурагдаж болно. Agaricus-ын хавтас нь боловсорсон үед хар хүрэн, волва байхгүй.",
+      "en": "Young Agaricus (initially pale gills) can be mistaken for A. phalloides. Mature Agaricus gills turn dark brown and there is no volva."
+     },
+     "sourceIds": [
+      "tjem2025"
+     ]
+    }
+   ],
+   "image": null,
+   "sources": [
+    "dtschaerzteblatt2020",
+    "kherlenchimeg2024",
+    "peglerwatling",
+    "pmc4057534",
+    "tjem2025"
+   ],
+   "confidenceLevel": "high",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "amanita-muscaria",
+   "scientificName": "Amanita muscaria",
+   "authority": "(L.) Lam.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Fly agaric",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Amanitaceae",
+    "genus": "Amanita"
+   },
+   "description": {
+    "mn": "Улаан малгайтай цагаан толботой, мэдрэлийн системд нөлөөлөх хортой мөөг.",
+    "en": "A toxic mushroom with a red cap and white warts that affects the central nervous system."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Тод улаан (заримдаа улбар шар, шар), цагаан хуягтай толботой.",
+     "en": "Bright red (sometimes orange or yellow) with white wart-like patches."
+    },
+    "stem": {
+     "mn": "Цагаан иш, цагираг, ишний суурьт цагаан хуягт цагираг.",
+     "en": "White stem with a ring and scaly rings at the swollen base."
+    },
+    "hymenophore": {
+     "mn": "Цагаан, ишнээс салангид хавтас.",
+     "en": "White, free gills."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд, мод (мичориз) хамт ургадаг.",
+     "en": "Forests, mycorrhizal with trees."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2,
+      3
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "VU",
+     "vouchers": [
+      "UBA/TK-15050"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "serious (CNS)",
+    "toxins": [
+     "ibotenic acid",
+     "muscimol"
+    ],
+    "humans": {
+     "mn": "Иботены хүчил ба мусцимол агуулна; төв мэдрэлийн системийн хордлого (будилах, дэмийрэх, ухаан санаа алдагдах). Ихэвчлэн үхэлд хүргэдэггүй боловч хүнд байж болно.",
+     "en": "Contains ibotenic acid and muscimol causing central nervous system poisoning (confusion, agitation, hallucinations, drowsiness). Usually not fatal but can be serious."
+    },
+    "animals": {
+     "mn": "Мусцимолын хордлого амьтанд мөн тохиолддог (ЭМ-ийн лавлах).",
+     "en": "Muscimol toxicosis also occurs in animals (veterinary reference)."
+    },
+    "symptoms": {
+     "mn": "Хэдэн минут–цагийн дотор бөөлжих, толгой эргэх, будилах, булчин таталт.",
+     "en": "Within minutes to hours: nausea, dizziness, confusion, muscle twitching."
+    },
+    "warnings": [
+     {
+      "mn": "Хэрэглэхийг хориглоно; эмчилгээний хэмжээг гэрээр тогтоох боломжгүй.",
+      "en": "Do not consume; effects are unpredictable and variable between specimens."
+     }
+    ],
+    "sourceIds": [
+     "michelot2003",
+     "peglerwatling",
+     "merckvet",
+     "ozsari2024"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхгүй.",
+     "en": "Not used as food."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Улаан малгай дээрх цагаан толбо, цагираг, ишний суурийн хуягт цагираг.",
+    "en": "Red cap with white warts, ring on the stem and scaly rings at the base."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Amanita caesarea",
+     "id": null,
+     "risk": "unknown",
+     "note": {
+      "mn": "Малгайн өнгөөр A. caesarea-тай андуурагдаж болно гэж уран зохиолд дурдсан.",
+      "en": "The literature notes possible confusion with A. caesarea by cap colour."
+     },
+     "sourceIds": [
+      "michelot2003"
+     ]
+    }
+   ],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "merckvet",
+    "michelot2003",
+    "ozsari2024",
+    "peglerwatling"
+   ],
+   "confidenceLevel": "high",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "amanita-pantherina",
+   "scientificName": "Amanita pantherina",
+   "authority": "(DC.) Krombh.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Panther cap",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Amanitaceae",
+    "genus": "Amanita"
+   },
+   "description": {
+    "mn": "Хүрэн малгайтай цагаан толботой, иботены хүчил агуулсан хортой мөөг; бусад мөөгтэй андуурагддаг.",
+    "en": "A toxic mushroom with a brown, white-warted cap containing ibotenic acid; often mistaken for other species."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Бор хүрэн, цагаан жижиг толботой.",
+     "en": "Brown with small white warts."
+    },
+    "stem": {
+     "mn": "Цагаан иш, цагираг, ишний суурь хавдсан, ирмэгтэй.",
+     "en": "White stem with a ring and a swollen base with a rim."
+    },
+    "hymenophore": {
+     "mn": "Цагаан, чөлөөт хавтас.",
+     "en": "White, free gills."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд ургадаг.",
+     "en": "Woodlands."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      3
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA00122-X"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "serious (CNS)",
+    "toxins": [
+     "ibotenic acid",
+     "muscimol"
+    ],
+    "humans": {
+     "mn": "Иботены хүчил, мусцимолын хордлого (A. muscaria-тай ижил хам шинж). Бусад мөөгтэй андуурагдаж улмаас санамсаргүй хордлого их гардаг.",
+     "en": "Ibotenic acid / muscimol poisoning (same syndrome as A. muscaria). Accidental poisonings occur because it is mistaken for other species."
+    },
+    "animals": {
+     "mn": "Мусцимолын хордлого амьтанд мөн тохиолддог (ЭМ-ийн лавлах).",
+     "en": "Muscimol toxicosis also occurs in animals (veterinary reference)."
+    },
+    "symptoms": {
+     "mn": "Будилах, дэмийрэх, нойрмоглох, булчин таталт.",
+     "en": "Confusion, agitation, drowsiness, muscle twitching."
+    },
+    "warnings": [
+     {
+      "mn": "Идэж болох мөөгтэй андуурах эрсдэлтэй.",
+      "en": "Risk of confusion with edible species."
+     }
+    ],
+    "sourceIds": [
+     "michelot2003",
+     "peglerwatling",
+     "merckvet",
+     "ozsari2024"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхгүй.",
+     "en": "Not used as food."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Бор малгай дээрх цагаан толбо, цагираг, ишний суурийн ирмэг.",
+    "en": "Brown cap with white warts, ring, rimmed base."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "merckvet",
+    "michelot2003",
+    "ozsari2024",
+    "peglerwatling"
+   ],
+   "confidenceLevel": "high",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "gyromitra-esculenta",
+   "scientificName": "Gyromitra esculenta",
+   "authority": "Pers. ex Fr.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "False morel",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Pezizomycetes",
+    "order": "Pezizales",
+    "family": "Discinaceae",
+    "genus": "Gyromitra"
+   },
+   "description": {
+    "mn": "Тархи шиг атираатай хүрэн малгайтай, хавар ургадаг мөөг; түүхий болон дутуу бэлтгэсэн үед хортой.",
+    "en": "A spring mushroom with a brown, brain-like folded cap; toxic raw and when improperly prepared."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Улайвтар хүрэн, тархи шиг атираатай, жигд бус.",
+     "en": "Reddish-brown, brain-like folded and lobed."
+    },
+    "stem": {
+     "mn": "Богино, цагаавтар, хөндий эсвэл завсартай.",
+     "en": "Short, whitish, hollow or chambered."
+    },
+    "hymenophore": {
+     "mn": "Хавтасгүй; малгайн гадаргуу атираатай.",
+     "en": "No gills; folded cap surface."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд, ихэвчлэн шилмүүст мод орчим (ерөнхий мэдээлэл).",
+     "en": "Forests, commonly near conifers (general information)."
+    }
+   },
+   "season": {
+    "mn": "Хавар",
+    "en": "Spring"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA8577"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "life-threatening",
+    "toxins": [
+     "gyromitrin (hydrolysed to monomethylhydrazine)"
+    ],
+    "humans": {
+     "mn": "Гиромитрин агуулна; мэдрэл, элэг, цусны улаан бөмбөгийг гэмтээж болно. Заримдаа хоолонд хэрэглэгддэг ч хоргүйжүүлэлт найдваргүй.",
+     "en": "Contains gyromitrin, which can damage nerves, liver and red blood cells. Sometimes eaten after preparation, but detoxification is unreliable."
+    },
+    "animals": null,
+    "symptoms": {
+     "mn": "Шинж тэмдэг хожуу илэрнэ: бөөлжих, толгой өвдөх, таталт, элэгний гэмтэл.",
+     "en": "Delayed symptoms: vomiting, headache, seizures, liver injury."
+    },
+    "warnings": [
+     {
+      "mn": "Түүхийгээр болон дутуу бэлтгэсэн үед аюултай; гэрийн нөхцөлд аюулгүй болгох баталгаа байхгүй.",
+      "en": "Dangerous raw or under-prepared; no safety guarantee with home preparation."
+     }
+    ],
+    "sourceIds": [
+     "pmc4057534",
+     "gouvinhas2024",
+     "dtschaerzteblatt2020"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхийг зөвлөдөггүй.",
+     "en": "Consumption is not recommended."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Тархи шиг атираа, хавар ургадаг, хөндий иштэй.",
+    "en": "Brain-like folds, spring fruiting, hollow stem."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Morchella spp.",
+     "id": null,
+     "risk": "unknown",
+     "note": {
+      "mn": "Жинхэнэ морелтой (Morchella) андуурагддаг. Morchella-ийн малгай нүхэрхэг, бүхэлдээ хөндий.",
+      "en": "Often confused with true morels (Morchella), whose cap is honeycombed and entirely hollow."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "dtschaerzteblatt2020",
+    "gouvinhas2024",
+    "kherlenchimeg2024",
+    "pmc4057534"
+   ],
+   "confidenceLevel": "high",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "russula-emetica",
+   "scientificName": "Russula emetica",
+   "authority": "(Schaeff.) Pers.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "The sickener",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Russulales",
+    "family": "Russulaceae",
+    "genus": "Russula"
+   },
+   "description": {
+    "mn": "Улаан малгайтай, ходоод гэдэсний хордлого үүсгэдэг мөөг.",
+    "en": "A red-capped mushroom that causes gastrointestinal poisoning."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Тод улаан, салсархаг, ирмэг нь судалтай.",
+     "en": "Bright red, slimy, with a striate margin."
+    },
+    "stem": {
+     "mn": "Цагаан, цагиргүй.",
+     "en": "White, without a ring."
+    },
+    "hymenophore": {
+     "mn": "Цагаан, ихэвчлэн тод хавтас.",
+     "en": "White gills."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Чийглэг ой, шилмүүст мод орчим (ерөнхий мэдээлэл).",
+     "en": "Damp forests, often near conifers (general information)."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      1,
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "NT",
+     "vouchers": [
+      "UBA/TK-15053"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "moderate (gastrointestinal)",
+    "toxins": [
+     "gastrointestinal irritants"
+    ],
+    "humans": {
+     "mn": "Ходоод гэдэсний цочроогч; бөөлжих, суулгалт. Хоолонд хэрэглэхгүй.",
+     "en": "Gastrointestinal irritant: vomiting and diarrhoea. Not eaten."
+    },
+    "animals": {
+     "mn": "Амьтанд ходоод гэдэсний шинж 15 мин–3 цагийн дотор илэрдэг (ЭМ-ийн лавлах).",
+     "en": "In animals GI signs appear within about 15 min–3 h (veterinary reference)."
+    },
+    "symptoms": {
+     "mn": "Богино хугацаанд бөөлжих, суулгах.",
+     "en": "Rapid onset of vomiting and diarrhoea."
+    },
+    "warnings": [
+     {
+      "mn": "Өнгөөрөө бусад улаан Russula-тай ялгахад хэцүү.",
+      "en": "Hard to separate from other red Russula by colour alone."
+     }
+    ],
+    "sourceIds": [
+     "peglerwatling",
+     "merckvet"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхгүй.",
+     "en": "Not eaten."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Улаан салстай малгай, цагаан хавтас, цагиргүй цагаан иш.",
+    "en": "Red slimy cap, white gills, ringless white stem."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "merckvet",
+    "peglerwatling"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "hypholoma-fasciculare",
+   "scientificName": "Hypholoma fasciculare",
+   "authority": "(Huds.) P. Kumm.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Sulphur tuft",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Strophariaceae",
+    "genus": "Hypholoma"
+   },
+   "description": {
+    "mn": "Үхсэн мод дээр бөөнөөр ургадаг хүхэр шар мөөг; ходоод гэдэсний цочроогч.",
+    "en": "A sulphur-yellow mushroom growing in clusters on dead wood; a gastrointestinal irritant."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Хүхэр шар, голдоо улбар шар хүрэн.",
+     "en": "Sulphur-yellow with an orange-brown centre."
+    },
+    "stem": {
+     "mn": "Шаргал, нарийн, бөөнөөр ургана.",
+     "en": "Yellowish, slender, in clusters."
+    },
+    "hymenophore": {
+     "mn": "Залуудаа хүхэр шар, дараа нь ногоовтор бор.",
+     "en": "Sulphur-yellow when young, later olive-brown."
+    }
+   },
+   "habitat": {
+    "types": [
+     "wood"
+    ],
+    "text": {
+     "mn": "Үхсэн мод, хожуул дээр.",
+     "en": "On stumps and dead wood."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA20160-21",
+      "LE202269"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "moderate (gastrointestinal)",
+    "toxins": [
+     "gastrointestinal irritants"
+    ],
+    "humans": {
+     "mn": "Ходоод гэдэсний цочроогч мөөгний жагсаалтад бүртгэгдсэн; хордлогын хүнд байдлын тайлан хоорондоо ялгаатай байж болно.",
+     "en": "Listed among gastro-enteric irritants; reported severity may differ between sources."
+    },
+    "animals": null,
+    "symptoms": {
+     "mn": "Бөөлжих, суулгах, гэдэс базлах.",
+     "en": "Vomiting, diarrhoea, abdominal cramps."
+    },
+    "warnings": [
+     {
+      "mn": "Идэж болох бусад Hypholoma-той андуурах эрсдэлтэй; зөвхөн гадаад төрхөөр ялгаж болохгүй.",
+      "en": "Beware confusion with other clustered Hypholoma; check gill colour (do not rely on appearance alone)."
+     }
+    ],
+    "sourceIds": [
+     "peglerwatling"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхгүй.",
+     "en": "Not eaten."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Бөөнөөр, мод дээр; хавтас ногоовтор шар (ногоон өнгө нь ялгах шинж).",
+    "en": "Clustered on wood; greenish-yellow gills are a key feature."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Hypholoma capnoides",
+     "id": null,
+     "risk": "unknown",
+     "note": {
+      "mn": "Төстэй Hypholoma; хавтас нь саарал, ногоон өнгөгүй.",
+      "en": "Similar clustered Hypholoma; gills grey rather than greenish."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "peglerwatling"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "agaricus-xanthodermus",
+   "scientificName": "Agaricus xanthodermus",
+   "authority": "Genev.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Yellow stainer",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Agaricaceae",
+    "genus": "Agaricus"
+   },
+   "description": {
+    "mn": "Цагаан малгайтай, хөрөх үед шарлаж, карболын үнэртэй; хордлого үүсгэдэг агарикус.",
+    "en": "A white-capped Agaricus that stains yellow and smells of carbolic; causes gastrointestinal upset."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Цагаан-саарал, хуруугаар хүрвэл шарлана.",
+     "en": "White-grey; bruises yellow when scratched."
+    },
+    "stem": {
+     "mn": "Цагаан, цагираг бүхий; суурь нь хүрэхэд тод шар болно.",
+     "en": "White with a ring; base stains bright yellow when cut."
+    },
+    "hymenophore": {
+     "mn": "Залуудаа ягаавтар, боловсорвол хар хүрэн хавтас.",
+     "en": "Pinkish when young, dark brown when mature."
+    }
+   },
+   "habitat": {
+    "types": [
+     "grassland"
+    ],
+    "text": {
+     "mn": "Нугат, зүлэг, ойн захад (ерөнхий мэдээлэл).",
+     "en": "Meadows, lawns, wood edges (general information)."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2,
+      5
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "VU",
+     "vouchers": [
+      "UBA8766"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "poisonous",
+    "severity": "moderate (gastrointestinal)",
+    "toxins": [
+     "gastrointestinal irritants"
+    ],
+    "humans": {
+     "mn": "Ходоод гэдэсний цочроогч мөөгөөр бүртгэгдсэн.",
+     "en": "Listed among gastro-enteric irritants."
+    },
+    "animals": null,
+    "symptoms": {
+     "mn": "Бөөлжих, суулгах, гэдэс базлах.",
+     "en": "Vomiting, diarrhoea, cramps."
+    },
+    "warnings": [
+     {
+      "mn": "Идэж болдог Agaricus-тай (A. campestris, A. arvensis) андуурагддаг.",
+      "en": "Frequently confused with edible Agaricus (A. campestris, A. arvensis)."
+     }
+    ],
+    "sourceIds": [
+     "peglerwatling"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": false,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэхгүй.",
+     "en": "Not eaten."
+    },
+    "sourceIds": []
+   },
+   "identificationNotes": {
+    "mn": "Ишний суурийг хугалж, шарлах эсэх, карболын үнэр.",
+    "en": "Cut the stem base: bright yellow staining and a carbolic/ink smell."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Agaricus campestris",
+     "id": "agaricus-campestris",
+     "risk": "dangerous",
+     "note": {
+      "mn": "Идэж болдог Agaricus-тай маш төстэй; ишний суурь шарлах нь гол ялгаа.",
+      "en": "Very similar to edible Agaricus; yellow staining of the stem base is the key difference."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "peglerwatling"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "tricholoma-equestre",
+   "scientificName": "Tricholoma equestre",
+   "authority": "(L.) P. Kumm.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Yellow knight",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Tricholomataceae",
+    "genus": "Tricholoma"
+   },
+   "description": {
+    "mn": "Шар-ногоон малгайтай; урьд нь идэж болдог гэж тооцогдож байсан ч их хэмжээгээр идэхэд булчин задрах (рабдомиолиз) хордлого гарсан тохиолдол бүртгэгдсэн.",
+    "en": "Yellow-green capped; formerly considered edible, but large or repeated meals have been linked to rhabdomyolysis."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Шар-ногоон, голдоо бор жижиг хайрстай.",
+     "en": "Yellow-green with a brownish scaly centre."
+    },
+    "stem": {
+     "mn": "Шар, цагиргүй.",
+     "en": "Yellow, without a ring."
+    },
+    "hymenophore": {
+     "mn": "Хүхэр шар хавтас.",
+     "en": "Sulphur-yellow gills."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ой, ихэвчлэн элсэрхэг хөрс (ерөнхий мэдээлэл).",
+     "en": "Forests, often on sandy soils (general information)."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA8637"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "potentially_poisonous",
+    "severity": "serious (muscle)",
+    "toxins": [
+     "unknown myotoxin"
+    ],
+    "humans": {
+     "mn": "Хэд хэдэн тохиолдолд их хэмжээгээр идсэний дараа булчин задралт (рабдомиолиз) бүртгэгдсэн. Механизм тодорхойгүй.",
+     "en": "Several cases of rhabdomyolysis after large or repeated meals have been reported; mechanism unknown."
+    },
+    "animals": null,
+    "symptoms": {
+     "mn": "Булчин сулрах, өвдөх, бөөрний дутагдал.",
+     "en": "Muscle weakness, pain, kidney failure."
+    },
+    "warnings": [
+     {
+      "mn": "Өмнө нь идэж болдог гэж тооцогдож байсан тул хуучин ном, зөвлөмжид тулж болохгүй.",
+      "en": "Formerly regarded as edible; do not rely on older field guides or traditions."
+     }
+    ],
+    "sourceIds": [
+     "pmc4057534",
+     "beug2009"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": null,
+    "note": {
+     "mn": "Түүхэн үед идэж байсан, одоо хортой гэж дахин ангилагдсан.",
+     "en": "Historically eaten; now reclassified as toxic."
+    },
+    "sourceIds": [
+     "pmc4057534"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Шар-ногоон малгай, хүхэр шар хавтас, цагиргүй иш.",
+    "en": "Yellow-green cap, sulphur-yellow gills, ringless stem."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "beug2009",
+    "kherlenchimeg2024",
+    "pmc4057534"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "boletus-edulis",
+   "scientificName": "Boletus edulis",
+   "authority": "Bull.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Porcini / penny bun",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Boletales",
+    "family": "Boletaceae",
+    "genus": "Boletus"
+   },
+   "description": {
+    "mn": "Махлаг, бор малгайтай, цагаан торлог ишнийхээ шинжээр танигддаг, өргөн хэрэглэгддэг мөөг.",
+    "en": "A fleshy, brown-capped bolete with a pale reticulated stem; widely eaten."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Хүрэн, гөлгөр, хуурайдаа сүрэлэн.",
+     "en": "Brown, smooth, bun-shaped."
+    },
+    "stem": {
+     "mn": "Бүдүүн, цагаан-хүрэн, дээд хэсэгтээ цагаан торлогтой.",
+     "en": "Thick, whitish-brown, with a pale net pattern near the top."
+    },
+    "hymenophore": {
+     "mn": "Нүх сүвтэй; залуудаа цагаан, хожим шаргал ногоон.",
+     "en": "Pores; white when young, later yellow-green."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд, мод (мичориз) хамт.",
+     "en": "Forests, mycorrhizal with trees."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA15051"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Гашуун Tylopilus felleus-тай андуурч болно (хоол муудна).",
+      "en": "Can be confused with bitter bolete, which spoils a dish."
+     }
+    ],
+    "sourceIds": [
+     "sif2022",
+     "foods2022",
+     "ozsari2024"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд өргөн хэрэглэдэг гэж иш татсан (Монголоос бусад) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as a popular edible mushroom in cited (non-Mongolian) sources."
+    },
+    "sourceIds": [
+     "sif2022",
+     "foods2022",
+     "ozsari2024"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Нүх сүвтэй доод тал (хавтасгүй), ишний цагаан тор; хэрчихэд мах нь цагаан хэвээр.",
+    "en": "Pores (no gills), pale net on stem; flesh stays white when cut."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Tylopilus felleus",
+     "id": null,
+     "risk": "harmless",
+     "note": {
+      "mn": "Гашуун амттай, ишний тор нь хар; хоолыг муутгана.",
+      "en": "Bitter taste, dark net on stem; ruins a dish."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "foods2022",
+    "kherlenchimeg2024",
+    "ozsari2024",
+    "sif2022"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "cantharellus-cibarius",
+   "scientificName": "Cantharellus cibarius",
+   "authority": "Fr.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Golden chanterelle",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Cantharellales",
+    "family": "Hydnaceae",
+    "genus": "Cantharellus"
+   },
+   "description": {
+    "mn": "Шар-улбар шар өнгөтэй, юүлүүр хэлбэртэй, доод талаараа хавтасгүй судалтай мөөг.",
+    "en": "A golden-yellow, funnel-shaped mushroom with blunt forked ridges instead of true gills."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Шар, шар-улбар шар, юүлүүр хэлбэртэй.",
+     "en": "Golden-yellow, funnel-shaped."
+    },
+    "stem": {
+     "mn": "Малгайтайгаа ижил өнгөтэй, хуваагдашгүй.",
+     "en": "Same colour as the cap, merging with it."
+    },
+    "hymenophore": {
+     "mn": "Ишээр доош гүйсэн, мохоо, салаалсан судал.",
+     "en": "Blunt, forked ridges running down the stem."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Ойд, мод (мичориз) хамт.",
+     "en": "Forests, mycorrhizal."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA-B/034"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Хуурамч шаргал мөөгтэй (Hygrophoropsis aurantiaca) андуурч болно.",
+      "en": "Can be confused with false chanterelle."
+     }
+    ],
+    "sourceIds": [
+     "sif2022",
+     "foods2022",
+     "ozsari2024"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд өргөн хэрэглэдэг гэж иш татсан (Монголоос бусад) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as a popular edible mushroom in cited (non-Mongolian) sources."
+    },
+    "sourceIds": [
+     "sif2022",
+     "foods2022",
+     "ozsari2024"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Жинхэнэ хавтасгүй, салаалсан мохоо судал; өнгө ишээр дамжин жигд.",
+    "en": "Ridges not true gills; colour uniform down the stem."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Hygrophoropsis aurantiaca",
+     "id": null,
+     "risk": "unknown",
+     "note": {
+      "mn": "Хуурамч шаргал мөөг; нимгэн, олон салаалсан жинхэнэ хавтастай.",
+      "en": "False chanterelle: thin, crowded, repeatedly forked true gills."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "foods2022",
+    "kherlenchimeg2024",
+    "ozsari2024",
+    "sif2022"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "lactarius-deliciosus",
+   "scientificName": "Lactarius deliciosus",
+   "authority": "(L.) Gray",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Saffron milk cap",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Russulales",
+    "family": "Russulaceae",
+    "genus": "Lactarius"
+   },
+   "description": {
+    "mn": "Улбар шар малгай, улбар шар сүүн шүүстэй, шилмүүст ойд ургадаг мөөг.",
+    "en": "An orange mushroom with orange latex, growing in coniferous forests."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Улбар шар, дугуй цагираг судалтай; хүрвэл ногооролтой.",
+     "en": "Orange with concentric zones; bruises green."
+    },
+    "stem": {
+     "mn": "Улбар шар, богино.",
+     "en": "Orange, short."
+    },
+    "hymenophore": {
+     "mn": "Улбар шар хавтас; хугалахад улбар шар сүү гарна.",
+     "en": "Orange gills exuding orange latex."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Шилмүүст ойд.",
+     "en": "Coniferous forests."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      1,
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "VU",
+     "vouchers": [
+      "UBA18104"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Хоруу бүхий L. torminosus-тай андуурагдаж болно.",
+      "en": "May be confused with toxic L. torminosus."
+     }
+    ],
+    "sourceIds": [
+     "bulam2018",
+     "niveiro2009",
+     "sif2022",
+     "ozsari2024"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Монголоос бусад) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as edible in cited (non-Mongolian) sources."
+    },
+    "sourceIds": [
+     "bulam2018",
+     "niveiro2009",
+     "sif2022",
+     "ozsari2024"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Улбар шар сүү, ногоорох, цагираг судал.",
+    "en": "Orange latex, green bruising, zoned cap."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Lactarius torminosus",
+     "id": null,
+     "risk": "dangerous",
+     "note": {
+      "mn": "Хоруу мөөгтэй (ходоод гэдэс) андуурч болно; сүү нь цагаан.",
+      "en": "Toxic (GI) lookalike; its latex is white."
+     },
+     "sourceIds": [
+      "laregion2026"
+     ]
+    }
+   ],
+   "image": null,
+   "sources": [
+    "bulam2018",
+    "kherlenchimeg2024",
+    "niveiro2009",
+    "ozsari2024",
+    "sif2022"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "agaricus-campestris",
+   "scientificName": "Agaricus campestris",
+   "authority": "L.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Field mushroom",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Agaricaceae",
+    "genus": "Agaricus"
+   },
+   "description": {
+    "mn": "Нугат, бэлчээрт ургадаг цагаан малгайтай, ягаавтар хар хүрэн хавтастай мөөг.",
+    "en": "A white mushroom of meadows and pastures with pink to dark brown gills."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Цагаан, гөлгөр, хуурай.",
+     "en": "White, smooth."
+    },
+    "stem": {
+     "mn": "Цагаан, богино, нимгэн цагираг бүхий.",
+     "en": "White, short, thin ring."
+    },
+    "hymenophore": {
+     "mn": "Залуудаа ягаавтар, дараа нь хар хүрэн.",
+     "en": "Pink when young, later dark brown."
+    }
+   },
+   "habitat": {
+    "types": [
+     "grassland"
+    ],
+    "text": {
+     "mn": "Нугат, бэлчээр, хээрийн ногоон талбай.",
+     "en": "Meadows, pastures and grassy ground."
+    }
+   },
+   "season": {
+    "mn": "Зуны сүүл–намар, борооны дараа (ерөнхий мэдээлэл)",
+    "en": "Late summer–autumn, after rain (general information)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      1,
+      2,
+      4,
+      11
+     ],
+     "newRegionCodes": [
+      11
+     ],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA84184"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Үхлийн A. phalloides болон хортой A. xanthodermus-тай андуурагдах эрсдэлтэй.",
+      "en": "Risk of confusion with deadly A. phalloides and toxic A. xanthodermus."
+     }
+    ],
+    "sourceIds": [
+     "niveiro2009",
+     "sif2022"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Монголоос бусад) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as edible in cited (non-Mongolian) sources."
+    },
+    "sourceIds": [
+     "niveiro2009",
+     "sif2022"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Ишний суурь шарлахгүй, волва байхгүй; хавтас ягаан→хар хүрэн.",
+    "en": "No yellow staining at base, no volva; gills pink→dark brown."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Amanita phalloides",
+     "id": "amanita-phalloides",
+     "risk": "dangerous",
+     "note": {
+      "mn": "ҮХЛИЙН хортой; цагаан хавтас, волва.",
+      "en": "DEADLY; white gills and volva."
+     },
+     "sourceIds": [
+      "tjem2025"
+     ]
+    },
+    {
+     "scientificName": "Agaricus xanthodermus",
+     "id": "agaricus-xanthodermus",
+     "risk": "dangerous",
+     "note": {
+      "mn": "Ишний суурь шарлаж, карболын үнэртэй.",
+      "en": "Base stains yellow, carbolic smell."
+     },
+     "sourceIds": [
+      "peglerwatling"
+     ]
+    }
+   ],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "niveiro2009",
+    "sif2022"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "macrolepiota-procera",
+   "scientificName": "Macrolepiota procera",
+   "authority": "(Scop.) Singer",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Parasol mushroom",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Agaricaceae",
+    "genus": "Macrolepiota"
+   },
+   "description": {
+    "mn": "Өндөр иштэй, шүхэр шиг том малгайтай, могойн арьс шиг хээтэй мөөг.",
+    "en": "A tall mushroom with a large umbrella-like cap and a snakeskin-patterned stem."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Том, хүрэн хайрстай, голдоо товгор.",
+     "en": "Large, brown-scaled, raised centre."
+    },
+    "stem": {
+     "mn": "Өндөр, могойн арьс шиг хээтэй, хөдөлдөг цагираг.",
+     "en": "Tall, snakeskin pattern, movable ring."
+    },
+    "hymenophore": {
+     "mn": "Цагаан, чөлөөт хавтас.",
+     "en": "White, free gills."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest",
+     "grassland"
+    ],
+    "text": {
+     "mn": "Ойн захад, нугат, бэлчээр (ерөнхий мэдээлэл).",
+     "en": "Wood edges, meadows, pastures (general information)."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "VU",
+     "vouchers": [],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Жижиг хортой Lepiota төрөлтэй андуурч болно.",
+      "en": "May be confused with smaller toxic Lepiota species."
+     }
+    ],
+    "sourceIds": [
+     "bulam2018"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Туркийн) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as edible in a cited (Turkish) source."
+    },
+    "sourceIds": [
+     "bulam2018"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Өндөр, могойн арьс шиг иш; хөдөлдөг цагираг; том малгай.",
+    "en": "Tall snakeskin-patterned stem; movable ring; large cap."
+   },
+   "similarSpecies": [
+    {
+     "scientificName": "Lepiota spp.",
+     "id": null,
+     "risk": "dangerous",
+     "note": {
+      "mn": "Хэдэн төрлийн жижиг Lepiota хортой; хэмжээ, хээг шалгана.",
+      "en": "Some small Lepiota species are toxic; check size and pattern."
+     },
+     "sourceIds": []
+    }
+   ],
+   "image": null,
+   "sources": [
+    "bulam2018",
+    "kherlenchimeg2024"
+   ],
+   "confidenceLevel": "low",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology",
+     "more sources for edibility"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "suillus-luteus",
+   "scientificName": "Suillus luteus",
+   "authority": "(L.) Roussel",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Slippery jack",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Boletales",
+    "family": "Suillaceae",
+    "genus": "Suillus"
+   },
+   "description": {
+    "mn": "Шилмүүст ойд ургадаг, салстай хүрэн малгайтай, цагираг бүхий болет.",
+    "en": "A bolete of conifer forests with a slimy brown cap and a ring on the stem."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Шүүслэг, салстай, шоколад хүрэн.",
+     "en": "Slimy, chocolate-brown."
+    },
+    "stem": {
+     "mn": "Цагаан-шар, цагираг бүхий; цагираг дээр жижиг толбо.",
+     "en": "Pale yellow with a ring; dotted above the ring."
+    },
+    "hymenophore": {
+     "mn": "Шар нүх сүв.",
+     "en": "Yellow pores."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Нарс болон бусад шилмүүстэй хамт.",
+     "en": "With pines and other conifers."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      1,
+      2,
+      4
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA8613"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [],
+    "sourceIds": [
+     "foods2022",
+     "niveiro2009"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Монголоос бусад) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as edible in cited (non-Mongolian) sources."
+    },
+    "sourceIds": [
+     "foods2022",
+     "niveiro2009"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Салстай малгай, цагираг, шар нүх сүв.",
+    "en": "Slimy cap, ring, yellow pores."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "foods2022",
+    "kherlenchimeg2024",
+    "niveiro2009"
+   ],
+   "confidenceLevel": "medium",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "suillus-granulatus",
+   "scientificName": "Suillus granulatus",
+   "authority": "(L.) Roussel",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Weeping bolete",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Boletales",
+    "family": "Suillaceae",
+    "genus": "Suillus"
+   },
+   "description": {
+    "mn": "Шилмүүст ойд ургадаг, цагиргүй, ишний дээд хэсэгт мөхлөгтэй болет.",
+    "en": "A conifer-forest bolete without a ring and with granular dots near the top of the stem."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Шаргал-бор, салстай.",
+     "en": "Yellowish-brown, slimy."
+    },
+    "stem": {
+     "mn": "Цагиргүй, дээд хэсэгтээ мөхлөгтэй.",
+     "en": "No ring, granular dots near the top."
+    },
+    "hymenophore": {
+     "mn": "Цайвар шар нүх сүв; шингэний дусал гаргана.",
+     "en": "Pale yellow pores that may exude droplets."
+    }
+   },
+   "habitat": {
+    "types": [
+     "forest"
+    ],
+    "text": {
+     "mn": "Нарс болон бусад шилмүүстэй хамт.",
+     "en": "With pines and other conifers."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      1,
+      4,
+      5
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": "LC",
+     "vouchers": [
+      "UBA20187-23"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [],
+    "sourceIds": [
+     "niveiro2009"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Аргентины) эх сурвалжид тэмдэглэгдсэн.",
+     "en": "Documented as edible in a cited (Argentine) source."
+    },
+    "sourceIds": [
+     "niveiro2009"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Цагиргүй, ишний дээд хэсэгт мөхлөг.",
+    "en": "No ring; granular dots at the stem top."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "niveiro2009"
+   ],
+   "confidenceLevel": "low",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  },
+  {
+   "id": "coprinus-comatus",
+   "scientificName": "Coprinus comatus",
+   "authority": "(O.F. Müll.) Pers.",
+   "synonyms": [],
+   "mongolianName": null,
+   "mongolianNameStatus": "missing-unverified",
+   "alternativeMongolianNames": [],
+   "englishName": "Shaggy mane",
+   "taxonomy": {
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Agaricomycetes",
+    "order": "Agaricales",
+    "family": "Agaricaceae",
+    "genus": "Coprinus"
+   },
+   "description": {
+    "mn": "Өндөр, цагаан, хайрстай бүрхүүлтэй, боловсорч дуусаад хар шингэн болж уусдаг мөөг.",
+    "en": "A tall white scaly mushroom whose cap dissolves into black liquid as it matures."
+   },
+   "morphology": {
+    "cap": {
+     "mn": "Цагаан, цилиндр хэлбэртэй, хурган хайрстай.",
+     "en": "White, cylindrical, shaggy-scaled."
+    },
+    "stem": {
+     "mn": "Цагаан, хөдөлдөг цагираг.",
+     "en": "White with a movable ring."
+    },
+    "hymenophore": {
+     "mn": "Цагаан→ягаан→хар шингэн.",
+     "en": "White → pink → black liquid."
+    }
+   },
+   "habitat": {
+    "types": [
+     "grassland"
+    ],
+    "text": {
+     "mn": "Нугат, замын захад, эвдэрсэн хөрсөнд (ерөнхий мэдээлэл).",
+     "en": "Meadows, roadsides, disturbed soil (general information)."
+    }
+   },
+   "season": {
+    "mn": "Зун, намар (ерөнхий мэдээлэл; Монгол дахь нарийвчилсан улирал баталгаажаагүй)",
+    "en": "Summer–autumn (general information; Mongolia-specific phenology not verified)"
+   },
+   "distribution": {
+    "mongolia": {
+     "documented": true,
+     "sourceId": "kherlenchimeg2024",
+     "regionCodes": [
+      2,
+      3,
+      4
+     ],
+     "newRegionCodes": [],
+     "conservationStatus": null,
+     "vouchers": [
+      "UBA154"
+     ],
+     "coordinatesPublished": false
+    }
+   },
+   "toxicity": {
+    "category": "documented_edible",
+    "severity": "none documented",
+    "toxins": [],
+    "humans": {
+     "mn": "Эх сурвалжид идэж болдог гэж тэмдэглэсэн; харин таны зураг дээрх дээж аюулгүй гэсэн баталгаа БИШ.",
+     "en": "Documented as edible in the cited sources; this is NOT a guarantee that your specimen is safe."
+    },
+    "animals": null,
+    "symptoms": null,
+    "warnings": [
+     {
+      "mn": "Залуу байхад л хэрэглэнэ; задарсан мөөг хэрэглэж болохгүй.",
+      "en": "Only young specimens; do not eat if deliquescing."
+     }
+    ],
+    "sourceIds": [
+     "niveiro2009"
+    ]
+   },
+   "edibility": {
+    "documentedEdible": true,
+    "note": {
+     "mn": "Хүнсэнд хэрэглэдэг гэж иш татсан (Аргентины) эх сурвалжид; зөвхөн залуу үед.",
+     "en": "Documented as edible in a cited (Argentine) source; eat only young specimens."
+    },
+    "sourceIds": [
+     "niveiro2009"
+    ]
+   },
+   "identificationNotes": {
+    "mn": "Цагаан хайрст цилиндр малгай, ирмэгээс эхлэн хар шингэн болж уусна.",
+    "en": "White shaggy cylindrical cap, dissolving into black liquid from the margin."
+   },
+   "similarSpecies": [],
+   "image": null,
+   "sources": [
+    "kherlenchimeg2024",
+    "niveiro2009"
+   ],
+   "confidenceLevel": "low",
+   "dataCompleteness": {
+    "missing": [
+     "mongolianName",
+     "distributionRecords (coordinates)",
+     "mongolianSeason",
+     "image",
+     "expertReviewOfMorphology"
+    ]
+   },
+   "reviewStatus": {
+    "toxicity": "sourced",
+    "distribution": "sourced (region level)",
+    "morphology": "unreviewed - general mycological knowledge, needs expert review"
+   },
+   "lastUpdated": "2026-11-02"
+  }
+ ]
+}

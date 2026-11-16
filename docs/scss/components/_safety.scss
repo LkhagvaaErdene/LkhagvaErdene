@@ -1,0 +1,112 @@
+// Safety hub (#/mushroom-safety*)
+.safety-call {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--text-main);
+  .buttons { margin: 0; flex-wrap: wrap; }
+  &-text { display: flex; align-items: center; gap: 0.4rem; }
+}
+
+.safety-tabs {
+  margin-bottom: 1.25rem;
+  li a { font-weight: 600; }
+}
+// Bulma's toggle-tab active colour has high specificity, so repeat the chain.
+.tabs.is-toggle.safety-tabs li.safety-tab--sos.is-active a { background: #dc2626; border-color: #dc2626; color: #fff; }
+.tabs.is-toggle.safety-tabs li.safety-tab--check.is-active a { background: $primaryColor; border-color: $primaryColor; color: #fff; }
+.tabs.is-toggle.safety-tabs li.safety-tab--facts.is-active a { background: #3273dc; border-color: #3273dc; color: #fff; }
+
+.safety-steps {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+.safety-step {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--sidebar-bg);
+  color: var(--text-main);
+  p { font-size: 0.88rem; color: var(--text-soft); margin: 0.15rem 0 0; }
+  &-n {
+    flex: 0 0 auto;
+    width: 2rem; height: 2rem;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #fff; background: #6b7280;
+  }
+  &--danger &-n { background: #dc2626; }
+  &--warning &-n { background: #d97706; }
+  &--info &-n { background: #3273dc; }
+  &--success &-n { background: $primaryColor; }
+}
+
+// Elapsed-time track: 0–48 h (6 h = 12.5 %, 24 h = 50 %)
+.tl {
+  position: relative;
+  padding-bottom: 1.4rem;
+  &-track {
+    position: relative;
+    height: 14px;
+    border-radius: 999px;
+    overflow: visible;
+    display: flex;
+    background: var(--hover-bg);
+  }
+  &-seg { display: block; height: 100%; }
+  &-seg--a { width: 12.5%; background: #f59e0b; border-radius: 999px 0 0 999px; }
+  &-seg--b { width: 37.5%; background: #dc2626; }
+  &-seg--c { width: 50%; background: #9f1239; border-radius: 0 999px 999px 0; opacity: 0.75; }
+  &-pin {
+    position: absolute;
+    top: -6px;
+    width: 4px; height: 26px;
+    margin-left: -2px;
+    border-radius: 2px;
+    background: var(--text-main);
+    box-shadow: 0 0 0 2px var(--sidebar-bg);
+    transition: left 0.3s ease;
+  }
+  &-ticks {
+    position: absolute;
+    left: 0; right: 0; top: 20px;
+    font-size: 0.72rem;
+    color: var(--text-soft);
+    span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+    span:first-child { transform: none; }
+    span:last-child { transform: translateX(-100%); }
+  }
+}
+
+.safety-syms { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.25rem 1rem; }
+
+.safety-myths { display: grid; gap: 0.5rem; }
+.safety-myth {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  background: var(--sidebar-bg);
+  color: var(--text-main);
+  summary { cursor: pointer; font-weight: 600; }
+  p { margin: 0.6rem 0 0; }
+  &[open] { border-color: $primaryColor; }
+}
+
+.safety-chips { margin-bottom: 0.5rem; }
+
+@media screen and (max-width: 768px) {
+  .safety-call .buttons .button { flex: 1 1 100%; }
+}

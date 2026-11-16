@@ -1,0 +1,8 @@
+{
+ "schemaVersion": 1,
+ "meta": {
+  "importedAt": null,
+  "note": "No georeferenced observation records have been imported. Run tools/importGbifRecords.mjs on a machine with internet access (see docs)."
+ },
+ "records": []
+}

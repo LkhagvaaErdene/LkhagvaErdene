@@ -1,0 +1,123 @@
+{
+ "schemaVersion": 1,
+ "sourceId": "kherlenchimeg2024",
+ "note": "Region names/numbers are the 16 phytogeographic regions (Grubov) used by the source. The 'provinces' lists are an APPROXIMATE crosswalk to aimags drawn by the project author for the existing SVG map and must be reviewed by a Mongolian botanist/mycologist. Regions with an empty list are intentionally not shaded on the province map.",
+ "regions": {
+  "1": {
+   "en": "Khuvsgul",
+   "mn": "Хөвсгөл",
+   "provinces": [
+    "Khuvsgul"
+   ],
+   "confidence": "high"
+  },
+  "2": {
+   "en": "Khentei",
+   "mn": "Хэнтий",
+   "provinces": [
+    "Khentii",
+    "Tuv",
+    "Ulaanbaatar"
+   ],
+   "confidence": "medium"
+  },
+  "3": {
+   "en": "Khangai",
+   "mn": "Хангай",
+   "provinces": [
+    "Arkhangai",
+    "Uvurkhangai",
+    "Bayankhongor",
+    "Zavkhan"
+   ],
+   "confidence": "medium"
+  },
+  "4": {
+   "en": "Mongolian Dauria",
+   "mn": "Монгол Дагуур",
+   "provinces": [
+    "Dornod",
+    "Khentii"
+   ],
+   "confidence": "low"
+  },
+  "5": {
+   "en": "Foothills of Great Khingan",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "6": {
+   "en": "Khovd",
+   "mn": "Ховд",
+   "provinces": [
+    "Khovd"
+   ],
+   "confidence": "medium"
+  },
+  "7": {
+   "en": "Mongolian Altai",
+   "mn": "Монгол Алтай",
+   "provinces": [
+    "Bayan-Ulgii",
+    "Khovd",
+    "Govi-Altai"
+   ],
+   "confidence": "medium"
+  },
+  "8": {
+   "en": "Middle Khalkha",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "9": {
+   "en": "East Mongolia",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "10": {
+   "en": "Depression of Great Lakes",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "11": {
+   "en": "Valley of Lakes",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "12": {
+   "en": "East Gobi",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "13": {
+   "en": "Gobi Altai",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "14": {
+   "en": "Dzungarian Gobi",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "15": {
+   "en": "Transaltai Gobi",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  },
+  "16": {
+   "en": "Alashan Gobi",
+   "mn": null,
+   "provinces": [],
+   "confidence": "none"
+  }
+ }
+}
