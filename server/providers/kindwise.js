@@ -4,18 +4,25 @@
 export const kindwise = {
   name: "kindwise",
   calibrated: true,
-  isConfigured: (env) => Boolean(env.KINDWISE_API_KEY),
+  keyVar: "KINDWISE_API_KEY",
+  // API keys are printable ASCII without spaces; text like a note or placeholder is not a key.
+  isConfigured: (env) => /^[\x21-\x7e]{8,}$/.test(env.KINDWISE_API_KEY || ""),
   async identify(dataUrl, env) {
     const base = (env.KINDWISE_BASE_URL || "https://mushroom.kindwise.com/api/v1").replace(/\/$/, "");
     const r = await fetch(`${base}/identification?details=common_names,taxonomy,rank`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Api-Key": env.KINDWISE_API_KEY },
-      body: JSON.stringify({ images: [dataUrl], similar_images: false }),
+      // similar_images is omitted on purpose: Kindwise documents "omit unless true" and may answer 400 to `false`.
+      body: JSON.stringify({ images: [dataUrl] }),
       signal: AbortSignal.timeout(45000),
     });
     if (r.status === 401 || r.status === 403) throw Object.assign(new Error("upstream auth"), { code: "upstream_auth" });
-    if (r.status === 429) throw Object.assign(new Error("upstream rate"), { code: "rate_limited" });
-    if (!r.ok) throw Object.assign(new Error(`upstream ${r.status}`), { code: "upstream" });
+    if (r.status === 429) throw Object.assign(new Error("upstream rate"), { code: "upstream_rate" });
+    if (!r.ok) {
+      // Kindwise's error text (never contains our key) goes to the server log only, never to the browser.
+      const detail = (await r.text().catch(() => "")).replace(/\s+/g, " ").slice(0, 300);
+      throw Object.assign(new Error(`upstream ${r.status} ${detail}`.trim()), { code: "upstream" });
+    }
     const j = await r.json();
     const result = j?.result;
     const sugg = result?.classification?.suggestions;

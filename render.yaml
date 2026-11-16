@@ -1,0 +1,12 @@
+# Render.com blueprint (free web service). Set KINDWISE_API_KEY in the dashboard after the first deploy.
+services:
+  - type: web
+    name: lkhagvaa-mushroom
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: MUSHROOM_PROVIDER
+        value: kindwise
+      - key: KINDWISE_API_KEY
+        sync: false

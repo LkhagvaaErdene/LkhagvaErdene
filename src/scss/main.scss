@@ -7,6 +7,9 @@ $primaryColorDark: color.scale($primaryColor, $lightness: -15%);
 $secondaryColor: #ff914d;
 $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 
+// Bulma (configured): the navbar collapses into the burger menu below 1408px so it can never overflow.
+@use "../../node_modules/bulma/sass" with ($navbar-breakpoint: 1408px);
+
 // Light / Dark загварын өнгөний хувьсагчид
 @mixin light-vars {
   --border: #ececf2;
@@ -65,10 +68,10 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
   @include dark-vars;
 }
 
-@import "../../node_modules/bulma/bulma";
 
 @import "./components/buttons";
 @import "./components/navbar";
+@import "./components/safety";
 @import "./layouts/sidebarPageLayout";
 @import "./components/sidebarMenuList";
 @import "./layouts/pageTableContentsLayout";

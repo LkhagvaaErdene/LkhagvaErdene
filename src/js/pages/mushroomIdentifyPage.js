@@ -1,14 +1,14 @@
 import { renderPageLayout } from "../layouts/pageLayout.js";
 import { renderNotification } from "../layouts/notificationLayout.js";
 import { escapeHtml } from "../fn/format.js";
-import { getCurrentLanguage, t } from "../i18n/i18n.js";
+import { getCurrentLanguage, getLocalizedValue as L, t } from "../i18n/i18n.js";
 import { loadMushroomData, provincesForSpecies } from "../services/mushroomService.js";
 import { getBackendStatus, identifyImage, IdentifyError, ACCEPTED_TYPES, MAX_FILE_BYTES } from "../services/identifyService.js";
 import { classifyIdentification } from "../fn/mushroomClassify.js";
 import { renderSafetyWarning, renderToxicityPanel, renderSpeciesDetail, renderCategoryBadge, renderSummaryCard, hydrateHeroImage, fmt, CAT_META } from "../components/mushroomUi.js";
 import { renderMushroomMapShell, mountMushroomMap, renderLegend, renderRecordPopup } from "../components/mushroomMap.js";
 
-const ERR_KEY = { rate_limited: "errRate", upstream: "errUpstream", timeout: "errTimeout", too_large: "errTooLarge", bad_image: "errBadImage", network: "errNetwork", not_configured: "backendNotConfiguredTitle" };
+const ERR_KEY = { rate_limited: "errRate", upstream: "errUpstream", upstream_auth: "errAuth", upstream_rate: "errQuota", timeout: "errTimeout", too_large: "errTooLarge", bad_image: "errBadImage", network: "errNetwork", not_configured: "backendNotConfiguredTitle" };
 
 export async function renderMushroomIdentifyPage() {
   const app = document.getElementById("app");
@@ -34,7 +34,9 @@ export async function renderMushroomIdentifyPage() {
           <span class="icon is-large"><i class="fas fa-camera fa-2x"></i></span>
           <p>${t("mushroom.uploadHint")}</p><p class="help">${t("mushroom.uploadFormats")}</p>
         </div>
+        <div class="buttons mt-2" id="mmSrcBtns"><button type="button" id="mmCamBtn" class="button is-info is-light"><span class="icon"><i class="fas fa-camera"></i></span><span>${L({ mn: "Камераар авах", en: "Take a photo" })}</span></button></div>
         <input id="mmFile" type="file" accept="image/jpeg,image/png,image/webp" class="is-hidden" />
+        <input id="mmCam" type="file" accept="image/*" capture="environment" class="is-hidden" />
         <div id="mmPreviewWrap" class="mm-preview is-hidden">
           <img id="mmPreview" alt="${escapeHtml(t("mushroom.previewAlt"))}" />
           <div class="buttons mt-3">
@@ -59,8 +61,8 @@ export async function renderMushroomIdentifyPage() {
       s.state === "ready"
         ? renderNotification(fmt(t("mushroom.backendReady"), { provider: escapeHtml(s.provider || "") }), "success")
         : s.state === "not_configured"
-          ? renderNotification(`<strong>${t("mushroom.backendNotConfiguredTitle")}</strong><br>${escapeHtml(t("mushroom.backendNotConfiguredText"))}`, "warning")
-          : renderNotification(`<strong>${t("mushroom.backendUnreachableTitle")}</strong><br>${escapeHtml(t("mushroom.backendUnreachableText"))}`, "warning");
+          ? renderNotification(`<strong>${t("mushroom.backendNotConfiguredTitle")}</strong><br>${escapeHtml(t("mushroom.backendNotConfiguredText"))}${setupHelp(s)}`, "warning")
+          : renderNotification(`<strong>${t("mushroom.backendUnreachableTitle")}</strong><br>${escapeHtml(t("mushroom.backendUnreachableText"))}${unreachableHelp(s)}`, "warning");
     refresh();
   });
 
@@ -75,6 +77,7 @@ export async function renderMushroomIdentifyPage() {
     $("mmPreview").src = st.url;
     $("mmPreviewWrap").classList.remove("is-hidden");
     $("mmDrop").classList.add("is-hidden");
+    $("mmSrcBtns").classList.add("is-hidden");
     $("mmResults").innerHTML = "";
     refresh();
   };
@@ -82,9 +85,11 @@ export async function renderMushroomIdentifyPage() {
     if (st.url) URL.revokeObjectURL(st.url);
     st.file = st.url = null;
     $("mmFile").value = "";
+    $("mmCam").value = "";
     $("mmPreview").removeAttribute("src");
     $("mmPreviewWrap").classList.add("is-hidden");
     $("mmDrop").classList.remove("is-hidden");
+    $("mmSrcBtns").classList.remove("is-hidden");
     $("mmResults").innerHTML = "";
     refresh();
   };
@@ -94,6 +99,8 @@ export async function renderMushroomIdentifyPage() {
   $("mmChange").addEventListener("click", pick);
   $("mmRemove").addEventListener("click", clear);
   $("mmFile").addEventListener("change", (e) => setFile(e.target.files[0]));
+  $("mmCamBtn").addEventListener("click", () => $("mmCam").click());
+  $("mmCam").addEventListener("change", (e) => { setFile(e.target.files[0]); e.target.value = ""; });
   ["dragenter", "dragover"].forEach((ev) => $("mmDrop").addEventListener(ev, (e) => (e.preventDefault(), $("mmDrop").classList.add("is-over"))));
   ["dragleave", "drop"].forEach((ev) => $("mmDrop").addEventListener(ev, (e) => (e.preventDefault(), $("mmDrop").classList.remove("is-over"))));
   $("mmDrop").addEventListener("drop", (e) => setFile(e.dataTransfer.files[0]));
@@ -117,6 +124,24 @@ export async function renderMushroomIdentifyPage() {
       refresh();
     }
   });
+}
+
+function unreachableHelp(s) {
+  const tried = L({ mn: "Туршсан хаяг", en: "Address tried" });
+  const local = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+  const how = local
+    ? L({ mn: "Өөр терминалд `npm start` ажиллуулаад энэ хуудсыг дахин ачаална уу (сервер localhost:8787 дээр ажиллана).", en: "Run `npm start` in another terminal, then reload this page (the server listens on localhost:8787)." })
+    : L({ mn: "Серверээ интернетэд байршуулаад хаягийг `?api=https://таны-сервер` гэж нэг удаа нээж өгнө үү (эсвэл js/config.js-д MUSHROOM_API_PRODUCTION бөглөнө).", en: "Deploy the server, then open this page once with `?api=https://your-server` (or set MUSHROOM_API_PRODUCTION in js/config.js)." });
+  return `<br><span class="is-size-7">${escapeHtml(tried)}: <code>${escapeHtml(s.url || "/api")}</code><br>${escapeHtml(how)}</span>`;
+}
+
+function setupHelp(s) {
+  const why = s.reason === "invalid_key"
+    ? L({ mn: "Шалтгаан: API түлхүүрийн оронд өөр текст бичсэн байна. KINDWISE_API_KEY= дараа зөвхөн түлхүүрээ (зайгүй) бич.", en: "Reason: the API key line contains other text. After KINDWISE_API_KEY= put only the key itself (no spaces)." })
+    : s.reason === "unknown_provider"
+    ? L({ mn: "Шалтгаан: MUSHROOM_PROVIDER буруу байна (kindwise эсвэл anthropic байх ёстой).", en: "Reason: MUSHROOM_PROVIDER is invalid (must be kindwise or anthropic)." })
+    : L({ mn: "Шалтгаан: API түлхүүр оруулаагүй байна.", en: "Reason: no API key was provided." });
+  return `<br><span class="is-size-7">${escapeHtml(why)}</span><pre class="mt-2 is-size-7">cp server/.env.example server/.env\n# server/.env: KINDWISE_API_KEY=...\nnpm start</pre>`;
 }
 
 function renderResults(res, data) {

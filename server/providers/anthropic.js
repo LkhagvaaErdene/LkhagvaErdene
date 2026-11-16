@@ -7,7 +7,8 @@ Be conservative. If the photo is unclear, give low probabilities. Never state th
 export const anthropic = {
   name: "anthropic",
   calibrated: false,
-  isConfigured: (env) => Boolean(env.ANTHROPIC_API_KEY),
+  keyVar: "ANTHROPIC_API_KEY",
+  isConfigured: (env) => /^[\x21-\x7e]{8,}$/.test(env.ANTHROPIC_API_KEY || ""),
   async identify(dataUrl, env) {
     const m = /^data:(image\/(?:jpeg|png|webp));base64,(.+)$/.exec(dataUrl);
     if (!m) throw Object.assign(new Error("bad image"), { code: "bad_image" });

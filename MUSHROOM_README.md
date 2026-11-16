@@ -4,14 +4,32 @@ Built **on top of** the existing vanilla-JS hash-router SPA (Bulma + SCSS, SVG p
 
 ## Run
 ```bash
-npm install                       # sass + bulma (existing)
-npm run sass                      # only if you change SCSS (then copy src/css -> docs/css)
-cp server/.env.example server/.env   # add ONE API key (see below)
-npm start                         # http://localhost:8787  (serves ../docs + /api)
-npm test                          # unit + server tests (Node >= 18)
-python3 tests/e2e.py              # browser tests (needs: pip install playwright pillow; playwright install chromium)
+npm install                          # sass + bulma
+npm run sass                         # only if you change SCSS (outputs src/css/main.css)
+cp server/.env.example server/.env   # then put ONE API key in it (comments go on their own line)
+npm start                            # http://localhost:8787  (serves the SPA + /api)
+npm test                             # unit + server tests (Node >= 18)
+python3 tests/e2e_ui.py              # browser tests: navbar, safety hub, identification (pip install playwright pillow; playwright install chromium)
 ```
-`src/` is the source and `docs/` the published copy; the JS/CSS/data changes were applied to both (identical).
+`src/` is the single source. The server serves `../docs` if it exists, otherwise `../src` (override with `STATIC_DIR`).
+If you publish via GitHub Pages, build/copy `src/` into `docs/` yourself and set `MUSHROOM_API_BASE_URL` in `src/js/config.js`.
+
+## Connecting the page to the backend
+Photo identification always needs the Node server (it keeps the API key). The page finds it by itself, trying in order:
+1. `?api=https://your-server` (saved in the browser; `?api=` with no value clears it)
+2. same origin `/api` (when `npm start` serves the page), then `http://localhost:8787/api` (page opened from Live Server / another static server; CORS for localhost is allowed outside production)
+3. on a public host: `MUSHROOM_API_PRODUCTION` in `src/js/config.js`, otherwise same-origin `/api`
+
+Hosting options:
+* **Simplest: one deployment for app + API.** Deploy this repo with the included `Dockerfile` (or `render.yaml` on Render.com), set `KINDWISE_API_KEY` in the host's dashboard, and share that URL. Same origin, so no CORS or config. (Deployment files are not tested against a real host.)
+* **GitHub Pages + separate API.** Deploy the Docker image somewhere, set `ALLOWED_ORIGINS=https://<user>.github.io` on it and `MUSHROOM_API_PRODUCTION` in `config.js`.
+
+## Navbar
+Desktop layout from 1408px; below that a burger menu (accordion dropdowns). The breakpoint lives in two places that must match:
+`$navbar-breakpoint` in `src/scss/main.scss` and `NAV_BREAKPOINT` in `src/js/components/navbar.js`.
+
+## Safety hub
+`#/mushroom-safety-sos`, `-check`, `-facts` (and `#/mushroom-safety` = checklist) in `src/js/pages/mushroomSafetyPage.js`, with 103/105 call buttons in the navbar dropdown and at the top of every tab. General information only; the first-aid wording should be reviewed by a medical professional.
 
 ## Image recognition (backend required)
 API keys must never be in the browser, so the SPA calls `/api/identify` on `server/server.js` (zero-dependency Node).
@@ -19,7 +37,8 @@ API keys must never be in the browser, so the SPA calls `/api/identify` on `serv
 |---|---|
 | `MUSHROOM_PROVIDER` | `kindwise` (default; dedicated Mushroom.id classifier) or `anthropic` (general vision LLM — never reported as "likely"; confidence is uncalibrated) |
 | `KINDWISE_API_KEY` / `ANTHROPIC_API_KEY` | provider key (server only) |
-| `STATIC_DIR` | optional, serve the SPA from the same server |
+| `STATIC_DIR` | optional; default is `../docs` if present, else `../src` |
+| `TRUST_PROXY` | `1` only behind a reverse proxy (uses `X-Forwarded-For` for rate limiting) |
 | `ALLOWED_ORIGINS` | needed only if SPA is hosted elsewhere (e.g. GitHub Pages); then set `MUSHROOM_API_BASE_URL` in `src/js/config.js` (+ docs copy) to the backend URL |
 | `MAX_IMAGE_BYTES`, `RATE_LIMIT_PER_MIN` | limits |
 

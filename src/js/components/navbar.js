@@ -1,5 +1,11 @@
 import { t, toggleLanguage } from "../i18n/i18n.js";
+import { CALCS } from "../pages/mushroomCalcPage.js";
+import { getLocalizedValue as LV } from "../i18n/i18n.js";
+import { xt } from "../i18n/mushroomExtraText.js";
 import { getThemePreference, setThemePreference } from "../i18n/theme.js";
+
+// Keep in sync with $navbar-breakpoint in src/scss/main.scss (burger menu below this width).
+const NAV_BREAKPOINT = 1407;
 
 export function renderNavbar() {
   return `
@@ -19,56 +25,27 @@ export function renderNavbar() {
             </a>
           </div>
 
-          <div class="navbar-menu has-text-weight-semibold has-text-centered" id="topNavbar">
+          <div class="navbar-menu has-text-weight-semibold" id="topNavbar">
             <div class="navbar-start app-top-navbar-right">
-              <a class="navbar-item" href="#/overview">
-                <span class="icon has-text-warning">
-                  <i class="fas fa-circle-question"></i>
-                </span>
-                <span>${t("nav.overview")}</span>
-              </a>
-              <a class="navbar-item" href="#/search">
-                <span class="icon has-text-primary">
-                  <i class="fas fa-search"></i>
-                </span>
-                <span>${t("nav.search")}</span>
-              </a>
-              <a class="navbar-item" href="#/calculation">
-                <span class="icon has-text-link">
-                  <i class="fas fa-calculator"></i>
-                </span>
-                <span>${t("nav.calculation")}</span>
-              </a>
-              <a class="navbar-item" href="#/books">
-                <span class="icon has-text-info">
-                  <i class="fas fa-book"></i>
-                </span>
-                <span>${t("nav.books")}</span>
-              </a>
-
-              <div class="navbar-item has-dropdown is-hoverable" id="mushroomDropdown">
-                <a class="navbar-link" href="#" id="mushroomMenuToggle" role="button" aria-haspopup="true">
-                  <span class="icon has-text-success"><i class="fas fa-seedling"></i></span>
-                  <span>${t("mushroom.navMenu")}</span>
-                </a>
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="#/mushrooms">
-                    <span class="icon has-text-success"><i class="fas fa-camera"></i></span>
-                    <span>${t("mushroom.navIdentify")}</span>
-                  </a>
-                  <a class="navbar-item" href="#/mushroom-atlas">
-                    <span class="icon has-text-success"><i class="fas fa-map-location-dot"></i></span>
-                    <span>${t("mushroom.navAtlas")}</span>
-                  </a>
-                </div>
-              </div>
-
-              <a class="navbar-item" href="#/contact">
-                <span class="icon has-text-danger">
-                  <i class="fas fa-address-card"></i>
-                </span>
-                <span>${t("nav.contact")}</span>
-              </a>
+<a class="navbar-item" href="#/overview"><span class="icon has-text-success"><i class="fas fa-seedling"></i></span><span>${LV({mn:"Нүүр",en:"Home"})}</span></a>
+<div class="navbar-item has-dropdown is-hoverable app-dd"><a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="icon has-text-primary"><i class="fas fa-book-open"></i></span><span>${LV({mn:"Мэдээлэл",en:"Learn"})}</span></a><div class="navbar-dropdown">
+<a class="navbar-item" href="#/mushroom-atlas"><span class="icon"><i class="fas fa-map-location-dot"></i></span><span>${t("mushroom.navAtlas")}</span></a>
+<a class="navbar-item" href="#/mushroom-compare"><span class="icon"><i class="fas fa-code-compare"></i></span><span>${LV({mn:"Харьцуулах",en:"Compare"})}</span></a>
+<a class="navbar-item" href="#/mushroom-lookalikes"><span class="icon"><i class="fas fa-clone"></i></span><span>${LV({mn:"Төстэй зүйлс",en:"Look-alikes"})}</span></a>
+<a class="navbar-item" href="#/mushroom-glossary"><span class="icon"><i class="fas fa-spell-check"></i></span><span>${LV({mn:"Нэр томьёо",en:"Glossary"})}</span></a>
+</div></div>
+<a class="navbar-item nav-identify" href="#/mushrooms"><span class="icon has-text-info"><i class="fas fa-camera"></i></span><span>${t("mushroom.navIdentify")}</span></a>
+<div class="navbar-item has-dropdown is-hoverable app-dd"><a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="icon has-text-link"><i class="fas fa-calculator"></i></span><span>${xt("navCalc")}</span></a><div class="navbar-dropdown">
+${Object.entries(CALCS).map(([k,c])=>`<a class="navbar-item" href="#/calc-${k}"><span class="icon"><i class="fas fa-${c.icon}"></i></span><span>${LV(c.title)}</span></a>`).join("")}</div></div>
+<div class="navbar-item has-dropdown is-hoverable app-dd nav-safety"><a class="navbar-link" href="#/mushroom-safety" role="button" aria-haspopup="true" aria-expanded="false"><span class="icon"><i class="fas fa-triangle-exclamation"></i></span><span>${LV({mn:"Аюулгүй байдал",en:"Safety"})}</span></a><div class="navbar-dropdown is-right nav-safety-dd">
+<div class="nav-sos"><p class="nav-sos-title">${LV({mn:"Хордсон гэж сэжиглэвэл залгана уу",en:"Suspected poisoning? Call now"})}</p>
+<div class="nav-sos-btns"><a class="button is-danger" href="tel:103"><span class="icon"><i class="fas fa-phone"></i></span><span>103</span></a><a class="button is-danger is-light" href="tel:105"><span class="icon"><i class="fas fa-phone"></i></span><span>105</span></a></div></div>
+<hr class="navbar-divider">
+<a class="navbar-item" href="#/mushroom-safety-sos"><span class="icon has-text-danger"><i class="fas fa-truck-medical"></i></span><span>${LV({mn:"Хордсон уу? Юу хийх вэ",en:"Poisoned? What to do"})}</span></a>
+<a class="navbar-item" href="#/mushroom-safety-check"><span class="icon has-text-success"><i class="fas fa-clipboard-check"></i></span><span>${LV({mn:"Идэхийн өмнөх шалгалт",en:"Before-eating check"})}</span></a>
+<a class="navbar-item" href="#/mushroom-safety-facts"><span class="icon has-text-info"><i class="fas fa-lightbulb"></i></span><span>${LV({mn:"Буруу итгэл, хорын лавлах",en:"Myths & toxin reference"})}</span></a>
+</div></div>
+<a class="navbar-item" href="#/contact"><span class="icon has-text-danger"><i class="fas fa-address-card"></i></span><span>${t("nav.contact")}</span></a>
             </div>
 
             <div class="navbar-end">
@@ -77,7 +54,7 @@ export function renderNavbar() {
                   <span class="icon app-theme-icon app-theme-icon-light"><i class="fas fa-sun"></i></span>
                   <span class="icon app-theme-icon app-theme-icon-dark"><i class="fas fa-moon"></i></span>
                   <span class="icon app-theme-icon app-theme-icon-auto"><i class="fas fa-circle-half-stroke"></i></span>
-                  <span>${t("nav.theme")}</span>
+                  <span class="app-theme-label">${t("nav.theme")}</span>
                 </a>
                 <div class="navbar-dropdown is-right">
                   <a class="navbar-item" href="#" data-theme-option="light">
@@ -138,7 +115,7 @@ export function initNavbar() {
 
   navLinks?.forEach((link) => {
     link.addEventListener("click", () => {
-      if (window.innerWidth <= 1023) {
+      if (window.innerWidth <= NAV_BREAKPOINT) {
         closeMenu();
       }
     });
@@ -157,7 +134,7 @@ export function initNavbar() {
   initMushroomDropdown();
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1023) {
+    if (window.innerWidth > NAV_BREAKPOINT) {
       closeMenu();
     }
   });
@@ -210,17 +187,26 @@ export function mountNavbar(root) {
   initNavbar();
 }
 
-// "Мөөг" dropdown: click/tap toggle (hover alone does not work on touch screens)
+// Dropdowns: click/tap toggle (hover alone does not work on touch screens); Escape closes.
 function initMushroomDropdown() {
-  const dd = document.getElementById("mushroomDropdown");
-  const toggle = document.getElementById("mushroomMenuToggle");
-  if (!dd || !toggle) return;
-  toggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    dd.classList.toggle("is-active");
+  const dds = [...document.querySelectorAll(".app-dd")];
+  const setOpen = (dd, open) => {
+    dd.classList.toggle("is-active", open);
+    dd.querySelector(".navbar-link")?.setAttribute("aria-expanded", String(open));
+  };
+  dds.forEach((dd) => {
+    dd.querySelector(".navbar-link").addEventListener("click", (event) => {
+      event.preventDefault();
+      const open = dd.classList.contains("is-active");
+      dds.forEach((o) => setOpen(o, false));
+      if (!open) setOpen(dd, true);
+    });
+    dd.querySelectorAll(".navbar-dropdown a").forEach((a) => a.addEventListener("click", () => setOpen(dd, false)));
   });
-  dd.querySelectorAll(".navbar-dropdown a").forEach((a) => a.addEventListener("click", () => dd.classList.remove("is-active")));
   document.addEventListener("click", (event) => {
-    if (!dd.contains(event.target)) dd.classList.remove("is-active");
+    dds.forEach((dd) => { if (!dd.contains(event.target)) setOpen(dd, false); });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") dds.forEach((dd) => setOpen(dd, false));
   });
 }

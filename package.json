@@ -7,7 +7,9 @@
     "sass": "sass --watch src/scss/main.scss:src/css/main.css",
     "generate:images": "node src/tools/generate-images-json.mjs",
     "start": "node server/server.js",
-    "test": "node --test tests/unit.test.mjs tests/server.test.mjs"
+    "test": "node --test tests/unit.test.mjs tests/mushroomCalc.test.mjs tests/server.test.mjs",
+    "test:e2e": "python3 tests/e2e_ui.py",
+    "check": "node server/check.mjs"
   },
   "keywords": [],
   "author": "",

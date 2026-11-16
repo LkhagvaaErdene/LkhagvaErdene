@@ -9,19 +9,19 @@ export function mountFooter(root) {
               <h3 class="title is-5">${t("footer.teamMembers")}</h3>
               <ul>
                 <li>
-                  <img src="./img/icon/afaci.png" alt="AFACI" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                  <img onerror="this.remove()" src="./img/icon/afaci.png" alt="AFACI" style="height: 1em; vertical-align: middle; margin-right: 5px;">
                   <a class="custom-link" href="https://rda.go.kr/afaci/site/project/view?pageId=02020401&pageName=APPT#submenu02020401" target="_blank">${t("footer.afaci")}</a>
                 </li>
                 <li>
-                  <img src="./img/icon/muls.png" alt="MULS" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                  <img onerror="this.remove()" src="./img/icon/muls.png" alt="MULS" style="height: 1em; vertical-align: middle; margin-right: 5px;">
                   <a class="custom-link" href="https://muls.edu.mn" target="_blank">${t("footer.muls")}</a>
                 </li>
                 <li>
-                  <img src="./img/icon/rda.png" alt="RDA" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                  <img onerror="this.remove()" src="./img/icon/rda.png" alt="RDA" style="height: 1em; vertical-align: middle; margin-right: 5px;">
                   <a class="custom-link" href="https://www.rda.go.kr/foreign/ten2/" target="_blank">${t("footer.rda")}</a>
                 </li>
                 <li>
-                  <img src="./img/icon/mfali.png" alt="MOFA" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                  <img onerror="this.remove()" src="./img/icon/mfali.png" alt="MOFA" style="height: 1em; vertical-align: middle; margin-right: 5px;">
                   <a class="custom-link" href="https://www.mofa.gov.mn" target="_blank">${t("footer.mfali")}</a>
                 </li>
               </ul>

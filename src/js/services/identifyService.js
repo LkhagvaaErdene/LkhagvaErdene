@@ -1,4 +1,4 @@
-import { MUSHROOM_API_BASE_URL } from "../config.js";
+import { apiCandidates } from "../config.js";
 
 export const MAX_FILE_BYTES = 8 * 1024 * 1024;
 export const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
@@ -10,20 +10,33 @@ export class IdentifyError extends Error {
   }
 }
 
-// -> { state: "ready"|"not_configured"|"unreachable", provider?, calibrated? }
-export async function getBackendStatus() {
+let base = null; // the backend URL that answered
+
+async function probe(url) {
   try {
     const ctl = new AbortController();
     const timer = setTimeout(() => ctl.abort(), 6000);
-    const r = await fetch(`${MUSHROOM_API_BASE_URL}/health`, { signal: ctl.signal });
+    const r = await fetch(`${url}/health`, { signal: ctl.signal });
     clearTimeout(timer);
-    const type = r.headers.get("content-type") || "";
-    if (!r.ok || !type.includes("application/json")) return { state: "unreachable" };
-    const j = await r.json();
-    return j.configured ? { state: "ready", provider: j.provider } : { state: "not_configured", provider: j.provider };
+    if (!r.ok || !(r.headers.get("content-type") || "").includes("application/json")) return null;
+    return await r.json();
   } catch {
-    return { state: "unreachable" };
+    return null;
   }
+}
+
+// -> { state: "ready"|"not_configured"|"unreachable", provider?, reason?, url }
+export async function getBackendStatus() {
+  const tried = apiCandidates();
+  for (const url of tried) {
+    const j = await probe(url);
+    if (!j) continue;
+    base = url;
+    return j.configured
+      ? { state: "ready", provider: j.provider, url }
+      : { state: "not_configured", provider: j.provider, reason: j.reason || null, url };
+  }
+  return { state: "unreachable", url: tried.join(", ") };
 }
 
 // Downscale to keep uploads small; the original file is never modified.
@@ -56,7 +69,7 @@ export async function identifyImage(file) {
   const timer = setTimeout(() => ctl.abort(), 60000);
   let r;
   try {
-    r = await fetch(`${MUSHROOM_API_BASE_URL}/identify`, {
+    r = await fetch(`${base || apiCandidates()[0]}/identify`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ image }),
