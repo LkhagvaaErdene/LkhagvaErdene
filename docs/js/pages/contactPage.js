@@ -11,7 +11,7 @@ export function renderContactPage() {
         <p>${xt("aboutText")}</p>
         <ul>
           <li><i class="fas fa-university fa-fw"></i> ${t("footer.university")}</li>
-          <li><i class="fas fa-envelope fa-fw"></i> <a class="custom-link" href="mailto:orgilid@muls.edu.mn">orgilid@muls.edu.mn</a></li>
+          <li><i class="fas fa-envelope fa-fw"></i> <a class="custom-link" href="mailto:swe2461037@muls.edu.mn">swe2461037@muls.edu.mn</a></li>
         </ul>
       </div>`,
   });

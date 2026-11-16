@@ -44,7 +44,7 @@ export function mountFooter(root) {
                 <ul>
                   <li><i class="fas fa-university fa-fw" style="margin-right: 6px;"></i> ${t("footer.university")}</li>
                   <li><i class="fas fa-map-marker-alt fa-fw" style="margin-right: 6px;"></i> ${t("footer.address")}</li>
-                  <li><i class="fas fa-phone fa-fw" style="margin-right: 6px;"></i> ${t("footer.phone")}: (+976)-89075531</li>
+                  <li><i class="fas fa-phone fa-fw" style="margin-right: 6px;"></i> ${t("footer.phone")}: (+976)-90575677</li>
                   <li><i class="fas fa-envelope fa-fw" style="margin-right: 6px;"></i> ${t("footer.email")}: <a class="custom-link" href="mailto:orgilid@muls.edu.mn">orgilid@muls.edu.mn</a></li>
                 </ul>
             </div>
